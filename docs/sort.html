@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sort - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>sort</h1>
+<p class="summary">Sort lines of text files.</p>
+<p class="see-also">See also: <a href="uniq.html">uniq</a>, <a href="shuf.html">shuf</a>, <a href="tsort.html">tsort</a></p>
+<p class="keywords">Keywords: sort, order, alphabetical, numerical, lines</p>
+<p class="example-desc">Sort file alphabetically:</p>
+<pre><code>sort file.txt</code></pre>
+<p class="example-desc">Sort in reverse order:</p>
+<pre><code>sort -r file.txt</code></pre>
+<p class="example-desc">Sort numerically:</p>
+<pre><code>sort -n file.txt</code></pre>
+<p class="example-desc">Sort by human-readable numbers (1K, 2M, 3G):</p>
+<pre><code>sort -h file.txt</code></pre>
+<p class="example-desc">Sort and remove duplicates:</p>
+<pre><code>sort -u file.txt</code></pre>
+<p class="example-desc">Sort by specific column (field):</p>
+<pre><code>sort -k2 file.txt</code></pre>
+<p class="example-desc">Sort by second column numerically:</p>
+<pre><code>sort -k2 -n file.txt</code></pre>
+<p class="example-desc">Sort by multiple columns:</p>
+<pre><code>sort -k1,1 -k2,2n file.txt</code></pre>
+<p class="example-desc">Sort with custom delimiter:</p>
+<pre><code>sort -t',' -k2 file.csv</code></pre>
+<p class="example-desc">Sort case-insensitive:</p>
+<pre><code>sort -f file.txt</code></pre>
+<p class="example-desc">Sort by month name:</p>
+<pre><code>sort -M file.txt</code></pre>
+<p class="example-desc">Check if already sorted:</p>
+<pre><code>sort -c file.txt</code></pre>
+<p class="example-desc">Sort in place (using sponge or temp file):</p>
+<pre><code>sort file.txt -o file.txt</code></pre>
+<p class="example-desc">Stable sort (preserve order of equal elements):</p>
+<pre><code>sort -s -k1 file.txt</code></pre>
+<p class="example-desc">Random sort (shuffle):</p>
+<pre><code>sort -R file.txt</code></pre>
+<h2>Flags</h2>
+<li><code>-r, --reverse</code> Reverse the result</li>
+<li><code>-n, --numeric-sort</code> Compare according to numerical value</li>
+<li><code>-h, --human-numeric-sort</code> Compare human readable numbers (2K, 1G)</li>
+<li><code>-k, --key</code> Sort by specific field</li>
+<li><code>-t, --field-separator</code> Use custom field separator</li>
+<li><code>-u, --unique</code> Output only unique lines</li>
+<li><code>-f, --ignore-case</code> Case-insensitive</li>
+<li><code>-c, --check</code> Check if input is sorted</li>
+<li><code>-o, --output</code> Write result to file</li>
+<li><code>-s, --stable</code> Stabilize sort by disabling last-resort comparison</li>
+<li><code>-R, --random-sort</code> Shuffle (random order)</li>
+<li><code>-M, --month-sort</code> Compare month names</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success (or sorted if -c)</li>
+<li><code>1</code> With -c, input is not sorted</li>
+<li><code>2</code> Error</li>
+<h2>Common Errors</h2>
+<li>"write failed" - Disk full or permission issue</li>
+<li>Wrong sort order - Use -n for numbers, -V for versions</li>
+<li>Column mismatch - Check -t delimiter and -k column number</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

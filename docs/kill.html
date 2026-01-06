@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kill - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>kill</h1>
+<p class="summary">Send signals to processes. Terminate or control processes.</p>
+<p class="see-also">See also: <a href="pkill.html">pkill</a>, <a href="killall.html">killall</a>, <a href="ps.html">ps</a></p>
+<p class="keywords">Keywords: terminate, stop, signal, process, pid, end</p>
+<p class="example-desc">Terminate a process gracefully (SIGTERM):</p>
+<pre><code>kill 1234</code></pre>
+<p class="example-desc">Force kill a process (SIGKILL):</p>
+<pre><code>kill -9 1234</code></pre>
+<p class="example-desc">Send SIGTERM explicitly:</p>
+<pre><code>kill -15 1234</code></pre>
+<p class="example-desc">Kill multiple processes:</p>
+<pre><code>kill 1234 5678 9012</code></pre>
+<p class="example-desc">Send SIGHUP (reload config):</p>
+<pre><code>kill -HUP 1234</code></pre>
+<p class="example-desc">Send SIGSTOP (pause process):</p>
+<pre><code>kill -STOP 1234</code></pre>
+<p class="example-desc">Send SIGCONT (resume process):</p>
+<pre><code>kill -CONT 1234</code></pre>
+<p class="example-desc">List all available signals:</p>
+<pre><code>kill -l</code></pre>
+<p class="example-desc">Kill by job number (background job):</p>
+<pre><code>kill %1</code></pre>
+<p class="example-desc">Kill all processes you own (DANGEROUS):</p>
+<pre><code>kill -9 -1</code></pre>
+<h2>Common Signals</h2>
+<p class="example-desc">`SIGTERM (15)`: Graceful termination (default)</p>
+<p class="example-desc">`SIGKILL (9)`: Force kill (cannot be caught)</p>
+<p class="example-desc">`SIGHUP (1)`: Hangup, often used to reload config</p>
+<p class="example-desc">`SIGINT (2)`: Interrupt (like Ctrl+C)</p>
+<p class="example-desc">`SIGSTOP (19)`: Stop/pause process</p>
+<p class="example-desc">`SIGCONT (18)`: Continue stopped process</p>
+<p class="example-desc">`SIGUSR1 (10)`: User-defined signal 1</p>
+<p class="example-desc">`SIGUSR2 (12)`: User-defined signal 2</p>
+<h2>Flags</h2>
+<li><code>-s signal</code> Specify signal by name</li>
+<li><code>-l</code> List all signal names</li>
+<li><code>-9</code> Send SIGKILL (force)</li>
+<li><code>-15</code> Send SIGTERM (graceful)</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error (process not found or permission denied)</li>
+<h2>Common Errors</h2>
+<li>"No such process" - Process already ended or wrong PID</li>
+<li>"Operation not permitted" - Need root or own the process</li>
+<li>Process won't die with SIGTERM - Use SIGKILL (-9)</li>
+<li>Zombie process - Can't kill, must kill parent</li>
+<h2>Related Commands</h2>
+<p class="example-desc">`pkill nginx`: Kill by name</p>
+<p class="example-desc">`killall nginx`: Kill all with name</p>
+<p class="example-desc">`pgrep nginx`: Find PID by name</p>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

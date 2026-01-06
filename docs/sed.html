@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sed - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>sed</h1>
+<p class="summary">Stream editor for filtering and transforming text.</p>
+<p class="see-also">See also: <a href="awk.html">awk</a>, <a href="perl.html">perl</a>, <a href="tr.html">tr</a></p>
+<p class="keywords">Keywords: replace, substitute, text, transform, edit, regex, stream</p>
+<p class="example-desc">Replace first occurrence per line:</p>
+<pre><code>sed 's/old/new/' file.txt</code></pre>
+<p class="example-desc">Replace all occurrences (global):</p>
+<pre><code>sed 's/old/new/g' file.txt</code></pre>
+<p class="example-desc">Replace case-insensitive:</p>
+<pre><code>sed 's/old/new/gi' file.txt</code></pre>
+<p class="example-desc">Edit file in place:</p>
+<pre><code>sed -i 's/old/new/g' file.txt</code></pre>
+<p class="example-desc">Edit in place with backup:</p>
+<pre><code>sed -i.bak 's/old/new/g' file.txt</code></pre>
+<p class="example-desc">Delete lines matching pattern:</p>
+<pre><code>sed '/pattern/d' file.txt</code></pre>
+<p class="example-desc">Delete empty lines:</p>
+<pre><code>sed '/^$/d' file.txt</code></pre>
+<p class="example-desc">Print only lines matching pattern:</p>
+<pre><code>sed -n '/pattern/p' file.txt</code></pre>
+<p class="example-desc">Replace only on specific line:</p>
+<pre><code>sed '5s/old/new/' file.txt</code></pre>
+<p class="example-desc">Replace on line range:</p>
+<pre><code>sed '1,10s/old/new/g' file.txt</code></pre>
+<p class="example-desc">Insert line before match:</p>
+<pre><code>sed '/pattern/i\new line' file.txt</code></pre>
+<p class="example-desc">Append line after match:</p>
+<pre><code>sed '/pattern/a\new line' file.txt</code></pre>
+<p class="example-desc">Multiple operations:</p>
+<pre><code>sed -e 's/foo/bar/g' -e 's/baz/qux/g' file.txt</code></pre>
+<p class="example-desc">Use different delimiter (useful for paths):</p>
+<pre><code>sed 's|/old/path|/new/path|g' file.txt</code></pre>
+<p class="example-desc">Remove leading whitespace:</p>
+<pre><code>sed 's/^[ \t]*//' file.txt</code></pre>
+<p class="example-desc">Remove trailing whitespace:</p>
+<pre><code>sed 's/[ \t]*$//' file.txt</code></pre>
+<h2>Flags</h2>
+<li><code>-i</code> Edit files in place</li>
+<li><code>-i.bak</code> Edit in place and create backup with .bak extension</li>
+<li><code>-n</code> Suppress automatic printing</li>
+<li><code>-e</code> Add script/expression</li>
+<li><code>-r</code> or `-E`: Use extended regex</li>
+<li><code>-f</code> Read script from file</li>
+<h2>Regex Patterns</h2>
+<p class="example-desc">`^`: Start of line</p>
+<p class="example-desc">`$`: End of line</p>
+<p class="example-desc">`.`: Any character</p>
+<p class="example-desc">`*`: Zero or more</p>
+<p class="example-desc">`\+`: One or more (need -E or escape)</p>
+<p class="example-desc">`[abc]`: Character class</p>
+<p class="example-desc">`\(...\)`: Capture group (use \1 to reference)</p>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Invalid command</li>
+<li><code>2</code> Input file error</li>
+<h2>Common Errors</h2>
+<li>"unterminated s command" - Missing closing delimiter</li>
+<li>Nothing replaced - Pattern didn't match, check regex</li>
+<li>Special chars not escaped - Escape . * [ ] etc.</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

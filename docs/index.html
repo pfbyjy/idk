@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idk - man pages for agents</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>idk</h1>
+            <p class="tagline">man pages for agents</p>
+        </header>
+
+        <section class="about">
+            <p><strong>idk</strong> is a command reference designed for AI agents. Unlike traditional man pages, idk pages prioritize:</p>
+            <ul>
+                <li><strong>Examples first</strong> &mdash; real commands you can run immediately</li>
+                <li><strong>Exit codes</strong> &mdash; know what 0, 1, 127 actually mean</li>
+                <li><strong>Common errors</strong> &mdash; what goes wrong and how to fix it</li>
+                <li><strong>Semantic search</strong> &mdash; find commands by what you want to do</li>
+            </ul>
+
+            <h3>Installation</h3>
+            <pre><code>cargo install idk</code></pre>
+
+            <h3>Agent Usage</h3>
+            <pre><code># Look up a specific command
+idk curl
+
+# Search by what you want to do
+idk "download a file"
+idk "find large files"
+
+# Get JSON output for parsing
+idk curl --json
+
+# List all available pages
+idk --list</code></pre>
+
+            <p>Add to your agent's system prompt:</p>
+            <pre><code>When you need help with a CLI command, run: idk &lt;command&gt;
+When you're not sure which command to use, run: idk "&lt;what you want to do&gt;"</code></pre>
+        </section>
+
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search commands..." autofocus>
+        </div>
+
+        <main>
+            <div id="results" class="command-grid">
+                
+            <a href="awk.html" class="command-card">
+                <h3>awk</h3>
+                <p>Pattern scanning and text processing language. Extremely powerful for columnar data.</p>
+            </a>
+
+            <a href="cat.html" class="command-card">
+                <h3>cat</h3>
+                <p>Concatenate and print files. Display file contents to stdout.</p>
+            </a>
+
+            <a href="cd.html" class="command-card">
+                <h3>cd</h3>
+                <p>Change the current working directory. Shell builtin, not a binary.</p>
+            </a>
+
+            <a href="chmod.html" class="command-card">
+                <h3>chmod</h3>
+                <p>Change file mode (permissions).</p>
+            </a>
+
+            <a href="chown.html" class="command-card">
+                <h3>chown</h3>
+                <p>Change file owner and group.</p>
+            </a>
+
+            <a href="cp.html" class="command-card">
+                <h3>cp</h3>
+                <p>Copy files and directories.</p>
+            </a>
+
+            <a href="curl.html" class="command-card">
+                <h3>curl</h3>
+                <p>Transfer data to/from a server using URLs. The Swiss Army knife of HTTP requests.</p>
+            </a>
+
+            <a href="cut.html" class="command-card">
+                <h3>cut</h3>
+                <p>Remove sections from each line of files.</p>
+            </a>
+
+            <a href="df.html" class="command-card">
+                <h3>df</h3>
+                <p>Report file system disk space usage.</p>
+            </a>
+
+            <a href="dig.html" class="command-card">
+                <h3>dig</h3>
+                <p>DNS lookup utility. Query DNS servers.</p>
+            </a>
+
+            <a href="docker.html" class="command-card">
+                <h3>docker</h3>
+                <p>Container platform for building and running applications.</p>
+            </a>
+
+            <a href="du.html" class="command-card">
+                <h3>du</h3>
+                <p>Estimate file and directory space usage.</p>
+            </a>
+
+            <a href="find.html" class="command-card">
+                <h3>find</h3>
+                <p>Search for files in a directory hierarchy. Extremely powerful.</p>
+            </a>
+
+            <a href="free.html" class="command-card">
+                <h3>free</h3>
+                <p>Display amount of free and used memory in the system.</p>
+            </a>
+
+            <a href="gh.html" class="command-card">
+                <h3>gh</h3>
+                <p>GitHub CLI - work with GitHub from the command line.</p>
+            </a>
+
+            <a href="git.html" class="command-card">
+                <h3>git</h3>
+                <p>Distributed version control system. Track changes, collaborate, manage code history.</p>
+            </a>
+
+            <a href="grep.html" class="command-card">
+                <h3>grep</h3>
+                <p>Search for patterns in files. Essential for finding code, logs, and text.</p>
+            </a>
+
+            <a href="head.html" class="command-card">
+                <h3>head</h3>
+                <p>Output the first part of files.</p>
+            </a>
+
+            <a href="jq.html" class="command-card">
+                <h3>jq</h3>
+                <p>Command-line JSON processor. Essential for API work.</p>
+            </a>
+
+            <a href="kill.html" class="command-card">
+                <h3>kill</h3>
+                <p>Send signals to processes. Terminate or control processes.</p>
+            </a>
+
+            <a href="less.html" class="command-card">
+                <h3>less</h3>
+                <p>View file contents with pagination. Better than more.</p>
+            </a>
+
+            <a href="ln.html" class="command-card">
+                <h3>ln</h3>
+                <p>Create links between files. Hard links or symbolic (soft) links.</p>
+            </a>
+
+            <a href="ls.html" class="command-card">
+                <h3>ls</h3>
+                <p>List directory contents. The most basic file exploration command.</p>
+            </a>
+
+            <a href="make.html" class="command-card">
+                <h3>make</h3>
+                <p>Build automation tool. Execute tasks defined in Makefile.</p>
+            </a>
+
+            <a href="mkdir.html" class="command-card">
+                <h3>mkdir</h3>
+                <p>Create directories.</p>
+            </a>
+
+            <a href="mv.html" class="command-card">
+                <h3>mv</h3>
+                <p>Move or rename files and directories.</p>
+            </a>
+
+            <a href="nc.html" class="command-card">
+                <h3>nc</h3>
+                <p>Netcat - networking Swiss Army knife. TCP/UDP connections and listeners.</p>
+            </a>
+
+            <a href="npm.html" class="command-card">
+                <h3>npm</h3>
+                <p>Node Package Manager. Manage JavaScript packages.</p>
+            </a>
+
+            <a href="ping.html" class="command-card">
+                <h3>ping</h3>
+                <p>Send ICMP ECHO_REQUEST to network hosts. Test network connectivity.</p>
+            </a>
+
+            <a href="pip.html" class="command-card">
+                <h3>pip</h3>
+                <p>Python package installer.</p>
+            </a>
+
+            <a href="ps.html" class="command-card">
+                <h3>ps</h3>
+                <p>Report process status. Show running processes.</p>
+            </a>
+
+            <a href="rm.html" class="command-card">
+                <h3>rm</h3>
+                <p>Remove files and directories. DANGEROUS - no trash, files are gone forever.</p>
+            </a>
+
+            <a href="rsync.html" class="command-card">
+                <h3>rsync</h3>
+                <p>Fast, versatile file synchronization. Better than scp for large transfers.</p>
+            </a>
+
+            <a href="scp.html" class="command-card">
+                <h3>scp</h3>
+                <p>Secure copy - transfer files over SSH.</p>
+            </a>
+
+            <a href="sed.html" class="command-card">
+                <h3>sed</h3>
+                <p>Stream editor for filtering and transforming text.</p>
+            </a>
+
+            <a href="sort.html" class="command-card">
+                <h3>sort</h3>
+                <p>Sort lines of text files.</p>
+            </a>
+
+            <a href="ssh.html" class="command-card">
+                <h3>ssh</h3>
+                <p>Secure Shell - connect to remote machines securely.</p>
+            </a>
+
+            <a href="sudo.html" class="command-card">
+                <h3>sudo</h3>
+                <p>Execute a command as another user (usually root).</p>
+            </a>
+
+            <a href="tail.html" class="command-card">
+                <h3>tail</h3>
+                <p>Output the last part of files. Essential for log monitoring.</p>
+            </a>
+
+            <a href="tar.html" class="command-card">
+                <h3>tar</h3>
+                <p>Archive files. Create, extract, and manipulate tar archives.</p>
+            </a>
+
+            <a href="top.html" class="command-card">
+                <h3>top</h3>
+                <p>Display real-time system processes. Interactive process viewer.</p>
+            </a>
+
+            <a href="touch.html" class="command-card">
+                <h3>touch</h3>
+                <p>Create empty files or update file timestamps.</p>
+            </a>
+
+            <a href="tr.html" class="command-card">
+                <h3>tr</h3>
+                <p>Translate or delete characters. Works on stdin only.</p>
+            </a>
+
+            <a href="uniq.html" class="command-card">
+                <h3>uniq</h3>
+                <p>Report or filter out repeated lines. INPUT MUST BE SORTED FIRST.</p>
+            </a>
+
+            <a href="wc.html" class="command-card">
+                <h3>wc</h3>
+                <p>Word, line, character, and byte count.</p>
+            </a>
+
+            <a href="wget.html" class="command-card">
+                <h3>wget</h3>
+                <p>Download files from the web. Non-interactive network downloader.</p>
+            </a>
+
+            <a href="xargs.html" class="command-card">
+                <h3>xargs</h3>
+                <p>Build and execute commands from standard input.</p>
+            </a>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.command-card');
+        const search = document.getElementById('search');
+
+        search.addEventListener('input', (e) => {
+            const query = e.target.value.toLowerCase();
+            cards.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                const desc = card.querySelector('p').textContent.toLowerCase();
+                const match = name.includes(query) || desc.includes(query);
+                card.style.display = match ? '' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

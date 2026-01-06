@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>make - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>make</h1>
+<p class="summary">Build automation tool. Execute tasks defined in Makefile.</p>
+<p class="see-also">See also: <a href="cmake.html">cmake</a>, <a href="ninja.html">ninja</a>, <a href="just.html">just</a></p>
+<p class="keywords">Keywords: build, compile, makefile, automation, target, dependency</p>
+<p class="example-desc">Run default target:</p>
+<pre><code>make</code></pre>
+<p class="example-desc">Run specific target:</p>
+<pre><code>make build</code></pre>
+<p class="example-desc">Run with parallel jobs:</p>
+<pre><code>make -j4</code></pre>
+<p class="example-desc">Run with maximum parallelism:</p>
+<pre><code>make -j$(nproc)</code></pre>
+<p class="example-desc">Dry run (show commands without executing):</p>
+<pre><code>make -n</code></pre>
+<p class="example-desc">Use different Makefile:</p>
+<pre><code>make -f custom.mk</code></pre>
+<p class="example-desc">Pass variable:</p>
+<pre><code>make CFLAGS="-O2"</code></pre>
+<p class="example-desc">Keep going on errors:</p>
+<pre><code>make -k</code></pre>
+<p class="example-desc">Print database (all rules):</p>
+<pre><code>make -p</code></pre>
+<p class="example-desc">Show why target is being made:</p>
+<pre><code>make --debug</code></pre>
+<p class="example-desc">Change directory before reading Makefile:</p>
+<pre><code>make -C /path/to/project</code></pre>
+<p class="example-desc">Remake all targets unconditionally:</p>
+<pre><code>make -B</code></pre>
+<p class="example-desc">Silent mode (no command echo):</p>
+<pre><code>make -s</code></pre>
+<h2>Flags</h2>
+<li><code>-j N</code> Run N jobs in parallel</li>
+<li><code>-n, --dry-run</code> Don't run commands, just print</li>
+<li><code>-f FILE</code> Use FILE as Makefile</li>
+<li><code>-C DIR</code> Change to directory before running</li>
+<li><code>-k, --keep-going</code> Continue on errors</li>
+<li><code>-B, --always-make</code> Remake all targets</li>
+<li><code>-s, --silent</code> Don't echo commands</li>
+<li><code>-p, --print-data-base</code> Print all rules and variables</li>
+<li><code>--debug</code> Print debugging info</li>
+<h2>Common Targets</h2>
+<p class="example-desc">`make`: Default target (usually `all`)</p>
+<p class="example-desc">`make all`: Build everything</p>
+<p class="example-desc">`make clean`: Remove built files</p>
+<p class="example-desc">`make install`: Install to system</p>
+<p class="example-desc">`make test`: Run tests</p>
+<p class="example-desc">`make help`: Show available targets</p>
+<h2>Makefile Basics</h2>
+<p>```makefile</p>
+<p>target: dependencies</p>
+<p>	command  # MUST be tab, not spaces</p>
+<p>.PHONY: clean  # Not a file</p>
+<p>clean:</p>
+<p>	rm -f *.o</p>
+<pre><code>`</code></pre>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error from make itself</li>
+<li><code>2</code> Error from executed command</li>
+<h2>Common Errors</h2>
+<li>"No targets" - No Makefile found or no default target</li>
+<li>"missing separator" - Use tabs, not spaces before commands</li>
+<li>"No rule to make target" - Missing dependency or file</li>
+<li>"Nothing to be done" - Target already up to date</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

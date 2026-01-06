@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xargs - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>xargs</h1>
+<p class="summary">Build and execute commands from standard input.</p>
+<p class="see-also">See also: <a href="parallel.html">parallel</a>, <a href="find.html">find</a> -<a href="exec.html">exec</a></p>
+<p class="keywords">Keywords: pipe, arguments, batch, command, parallel, stdin</p>
+<p class="example-desc">Basic usage (pass stdin as arguments):</p>
+<pre><code>echo "file1 file2" | xargs rm</code></pre>
+<p class="example-desc">Use with find:</p>
+<pre><code>find . -name "*.txt" | xargs cat</code></pre>
+<p class="example-desc">Handle filenames with spaces (null delimiter):</p>
+<pre><code>find . -name "*.txt" -print0 | xargs -0 rm</code></pre>
+<p class="example-desc">One argument per command:</p>
+<pre><code>cat urls.txt | xargs -n1 curl</code></pre>
+<p class="example-desc">Limit arguments per command:</p>
+<pre><code>echo "1 2 3 4 5 6" | xargs -n2 echo</code></pre>
+<p class="example-desc">Replace string placeholder:</p>
+<pre><code>cat files.txt | xargs -I {} cp {} /backup/</code></pre>
+<p class="example-desc">Parallel execution:</p>
+<pre><code>cat urls.txt | xargs -P4 -n1 curl</code></pre>
+<p class="example-desc">Prompt before each command:</p>
+<pre><code>find . -name "*.tmp" | xargs -p rm</code></pre>
+<p class="example-desc">Show command being executed:</p>
+<pre><code>cat files.txt | xargs -t cp -t /backup/</code></pre>
+<p class="example-desc">Max command line length:</p>
+<pre><code>cat files.txt | xargs -s 1000 echo</code></pre>
+<p class="example-desc">Handle empty input gracefully:</p>
+<pre><code>echo "" | xargs --no-run-if-empty rm</code></pre>
+<p class="example-desc">Append to specific position:</p>
+<pre><code>find . -name "*.jpg" | xargs -I {} convert {} -resize 50% {}</code></pre>
+<h2>Flags</h2>
+<li><code>-0, --null</code> Input items are null-terminated</li>
+<li><code>-n N</code> Use at most N arguments per command</li>
+<li><code>-I {}</code> Replace {} with input (implies -n1)</li>
+<li><code>-P N</code> Run N processes in parallel</li>
+<li><code>-p, --interactive</code> Prompt before each command</li>
+<li><code>-t, --verbose</code> Print commands before executing</li>
+<li><code>-r, --no-run-if-empty</code> Don't run if input is empty</li>
+<li><code>-s N</code> Max command line length</li>
+<li><code>-L N</code> Use at most N lines per command</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>123</code> Any invocation exited with 1-125</li>
+<li><code>124</code> Command exited with 255</li>
+<li><code>125</code> Command killed by signal</li>
+<li><code>126</code> Command cannot be run</li>
+<li><code>127</code> Command not found</li>
+<li><code>1</code> Other error</li>
+<h2>Common Patterns</h2>
+<p>```bash</p>
+<h1>Process files with spaces</h1>
+<p>find . -print0 | xargs -0</p>
+<h1>Parallel downloads</h1>
+<p>cat urls.txt | xargs -P8 -n1 wget</p>
+<h1>Delete old files</h1>
+<p>find . -mtime +30 | xargs rm</p>
+<h1>Replace in files</h1>
+<p>find . -name "*.txt" | xargs sed -i 's/old/new/g'</p>
+<pre><code>`</code></pre>
+<h2>Common Errors</h2>
+<li>"Argument list too long" - Use xargs to batch</li>
+<li>Breaks on spaces in filenames - Use -0 with find -print0</li>
+<li>Command runs with no args - Use --no-run-if-empty</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

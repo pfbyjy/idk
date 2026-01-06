@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ping - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>ping</h1>
+<p class="summary">Send ICMP ECHO_REQUEST to network hosts. Test network connectivity.</p>
+<p class="see-also">See also: <a href="traceroute.html">traceroute</a>, <a href="mtr.html">mtr</a>, <a href="nc.html">nc</a></p>
+<p class="keywords">Keywords: network, test, connectivity, latency, host, icmp</p>
+<p class="example-desc">Ping a host:</p>
+<pre><code>ping example.com</code></pre>
+<p class="example-desc">Ping with count limit:</p>
+<pre><code>ping -c 4 example.com</code></pre>
+<p class="example-desc">Ping with interval (seconds):</p>
+<pre><code>ping -i 2 example.com</code></pre>
+<p class="example-desc">Ping with timeout:</p>
+<pre><code>ping -W 5 example.com</code></pre>
+<p class="example-desc">Ping flood (requires root, DANGEROUS):</p>
+<pre><code>sudo ping -f example.com</code></pre>
+<p class="example-desc">Ping with specific packet size:</p>
+<pre><code>ping -s 1000 example.com</code></pre>
+<p class="example-desc">Ping quietly (only summary):</p>
+<pre><code>ping -q -c 4 example.com</code></pre>
+<p class="example-desc">Ping with timestamp:</p>
+<pre><code>ping -D example.com</code></pre>
+<p class="example-desc">Ping audible (beep on reply):</p>
+<pre><code>ping -a example.com</code></pre>
+<p class="example-desc">Ping IPv6:</p>
+<pre><code>ping6 example.com</code></pre>
+<p class="example-desc">Ping specific interface:</p>
+<pre><code>ping -I eth0 example.com</code></pre>
+<h2>Flags</h2>
+<li><code>-c count</code> Stop after count packets</li>
+<li><code>-i interval</code> Seconds between packets</li>
+<li><code>-W timeout</code> Time to wait for response</li>
+<li><code>-s size</code> Packet size in bytes</li>
+<li><code>-q</code> Quiet output</li>
+<li><code>-f</code> Flood ping (root only)</li>
+<li><code>-a</code> Audible ping</li>
+<li><code>-D</code> Print timestamp</li>
+<li><code>-I</code> Network interface or source address</li>
+<li><code>-4</code> Force IPv4</li>
+<li><code>-6</code> Force IPv6</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Host is alive and responding</li>
+<li><code>1</code> No reply received</li>
+<li><code>2</code> Other error</li>
+<h2>Output Meaning</h2>
+<p class="example-desc">`64 bytes from...`: Successful reply</p>
+<p class="example-desc">`time=X ms`: Round-trip latency</p>
+<p class="example-desc">`ttl=X`: Time to live (hop limit)</p>
+<p class="example-desc">`Request timeout`: No response</p>
+<p class="example-desc">`Destination host unreachable`: Routing problem</p>
+<h2>Common Errors</h2>
+<li>"Name or service not known" - DNS failure or typo</li>
+<li>"Network is unreachable" - No route to host</li>
+<li>"Destination Host Unreachable" - Host down or filtered</li>
+<li>No response - Host may block ICMP (firewalled)</li>
+<h2>Note</h2>
+<p>Some hosts block ICMP - no response doesn't always mean host is down. Try <code>nc</code> or <code>curl</code> as alternatives.</p>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

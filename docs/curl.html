@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curl - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>curl</h1>
+<p class="summary">Transfer data to/from a server using URLs. The Swiss Army knife of HTTP requests.</p>
+<p class="see-also">See also: <a href="wget.html">wget</a>, <a href="httpie.html">httpie</a></p>
+<p class="keywords">Keywords: http, https, request, download, upload, api, rest, post, get, web</p>
+<p class="example-desc">Download a file to stdout:</p>
+<pre><code>curl https://example.com</code></pre>
+<p class="example-desc">Download and save with remote filename:</p>
+<pre><code>curl -O https://example.com/file.tar.gz</code></pre>
+<p class="example-desc">Download and save to specific file:</p>
+<pre><code>curl -o output.txt https://example.com/data</code></pre>
+<p class="example-desc">Make a POST request with JSON data:</p>
+<pre><code>curl -X POST -H "Content-Type: application/json" -d '{"key": "value"}' https://api.example.com/endpoint</code></pre>
+<p class="example-desc">Make a POST request with form data:</p>
+<pre><code>curl -X POST -d "name=value&other=data" https://example.com/form</code></pre>
+<p class="example-desc">Follow redirects:</p>
+<pre><code>curl -L https://example.com/redirecting-url</code></pre>
+<p class="example-desc">Include response headers in output:</p>
+<pre><code>curl -i https://example.com</code></pre>
+<p class="example-desc">Send with authentication (basic auth):</p>
+<pre><code>curl -u username:password https://api.example.com/secure</code></pre>
+<p class="example-desc">Send with bearer token:</p>
+<pre><code>curl -H "Authorization: Bearer TOKEN" https://api.example.com/secure</code></pre>
+<p class="example-desc">Download silently (no progress bar):</p>
+<pre><code>curl -s https://example.com/data</code></pre>
+<p class="example-desc">Set request timeout:</p>
+<pre><code>curl --connect-timeout 5 --max-time 10 https://example.com</code></pre>
+<p class="example-desc">Send custom headers:</p>
+<pre><code>curl -H "X-Custom-Header: value" https://example.com</code></pre>
+<h2>Flags</h2>
+<li><code>-X, --request</code> HTTP method (GET, POST, PUT, DELETE, PATCH)</li>
+<li><code>-H, --header</code> Add custom header</li>
+<li><code>-d, --data</code> Send data in request body</li>
+<li><code>-o, --output</code> Write output to file</li>
+<li><code>-O, --remote-name</code> Save with remote filename</li>
+<li><code>-L, --location</code> Follow redirects</li>
+<li><code>-i, --include</code> Include response headers</li>
+<li><code>-s, --silent</code> Silent mode, no progress</li>
+<li><code>-v, --verbose</code> Verbose output for debugging</li>
+<li><code>-f, --fail</code> Fail silently on HTTP errors (no output)</li>
+<li><code>-k, --insecure</code> Allow insecure SSL connections</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>6</code> Could not resolve host</li>
+<li><code>7</code> Failed to connect to host</li>
+<li><code>22</code> HTTP error (with -f flag)</li>
+<li><code>28</code> Operation timeout</li>
+<li><code>35</code> SSL connect error</li>
+<li><code>56</code> Failure receiving network data</li>
+<h2>Common Errors</h2>
+<li>"Could not resolve host" - Check URL spelling, DNS, or internet connection</li>
+<li>"Connection refused" - Server not running or wrong port</li>
+<li>"SSL certificate problem" - Use -k to bypass (only for testing!) or fix cert chain</li>
+<li>Empty response with no error - Server returned empty body, check with -i to see headers</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

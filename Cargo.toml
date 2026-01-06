@@ -1,0 +1,13 @@
+[package]
+name = "idk"
+version = "0.1.0"
+edition = "2021"
+description = "man pages for agents - semantic search for commands"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+colored = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+dirs = "5"
+ureq = "2"

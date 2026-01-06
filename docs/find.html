@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>find</h1>
+<p class="summary">Search for files in a directory hierarchy. Extremely powerful.</p>
+<p class="see-also">See also: <a href="locate.html">locate</a>, <a href="fd.html">fd</a>, <a href="grep.html">grep</a></p>
+<p class="keywords">Keywords: search, find, files, locate, pattern, recursive</p>
+<p class="example-desc">Find files by name:</p>
+<pre><code>find /path -name "filename.txt"</code></pre>
+<p class="example-desc">Find files by name (case-insensitive):</p>
+<pre><code>find /path -iname "filename.txt"</code></pre>
+<p class="example-desc">Find files by extension:</p>
+<pre><code>find . -name "*.py"</code></pre>
+<p class="example-desc">Find directories only:</p>
+<pre><code>find . -type d -name "src"</code></pre>
+<p class="example-desc">Find files only:</p>
+<pre><code>find . -type f -name "*.js"</code></pre>
+<p class="example-desc">Find files modified in last 24 hours:</p>
+<pre><code>find . -mtime -1</code></pre>
+<p class="example-desc">Find files modified more than 7 days ago:</p>
+<pre><code>find . -mtime +7</code></pre>
+<p class="example-desc">Find files larger than 100MB:</p>
+<pre><code>find . -size +100M</code></pre>
+<p class="example-desc">Find empty files:</p>
+<pre><code>find . -empty</code></pre>
+<p class="example-desc">Find and delete files:</p>
+<pre><code>find . -name "*.tmp" -delete</code></pre>
+<p class="example-desc">Find and execute command on each file:</p>
+<pre><code>find . -name "*.txt" -exec cat {} \;</code></pre>
+<p class="example-desc">Find and execute command with all files at once:</p>
+<pre><code>find . -name "*.txt" -exec cat {} +</code></pre>
+<p class="example-desc">Find excluding a directory:</p>
+<pre><code>find . -path ./node_modules -prune -o -name "*.js" -print</code></pre>
+<p class="example-desc">Find files with specific permissions:</p>
+<pre><code>find . -perm 644</code></pre>
+<p class="example-desc">Find files owned by user:</p>
+<pre><code>find . -user username</code></pre>
+<p class="example-desc">Find and print with null separator (for xargs):</p>
+<pre><code>find . -name "*.txt" -print0 | xargs -0 rm</code></pre>
+<h2>Flags</h2>
+<li><code>-name</code> Match filename pattern</li>
+<li><code>-iname</code> Case-insensitive name match</li>
+<li><code>-type</code> File type (f=file, d=directory, l=symlink)</li>
+<li><code>-mtime</code> Modified time in days (+n=more than, -n=less than)</li>
+<li><code>-mmin</code> Modified time in minutes</li>
+<li><code>-size</code> File size (+100M=larger, -100M=smaller)</li>
+<li><code>-empty</code> Empty files or directories</li>
+<li><code>-delete</code> Delete matching files</li>
+<li><code>-exec</code> Execute command on each match</li>
+<li><code>-print0</code> Print with null separator</li>
+<li><code>-maxdepth</code> Limit search depth</li>
+<li><code>-path</code> Match full path</li>
+<li><code>-prune</code> Don't descend into directory</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success (even if no files found)</li>
+<li><code>1</code> Error occurred</li>
+<h2>Common Errors</h2>
+<li>"Permission denied" on some dirs - Normal for system dirs, ignore with 2>/dev/null</li>
+<li>"missing argument to -exec" - Need {} \; or {} + at end</li>
+<li>Finding too many files - Use -maxdepth to limit</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

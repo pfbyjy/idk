@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tail - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>tail</h1>
+<p class="summary">Output the last part of files. Essential for log monitoring.</p>
+<p class="see-also">See also: <a href="head.html">head</a>, <a href="less.html">less</a>, <a href="watch.html">watch</a></p>
+<p class="keywords">Keywords: last, lines, end, bottom, logs, follow, stream</p>
+<p class="example-desc">Show last 10 lines of a file (default):</p>
+<pre><code>tail file.txt</code></pre>
+<p class="example-desc">Show last N lines:</p>
+<pre><code>tail -n 20 file.txt</code></pre>
+<p class="example-desc">Show last N bytes:</p>
+<pre><code>tail -c 100 file.txt</code></pre>
+<p class="example-desc">Follow a file (watch for new content) - Ctrl+C to stop:</p>
+<pre><code>tail -f logfile.log</code></pre>
+<p class="example-desc">Follow multiple files:</p>
+<pre><code>tail -f log1.log log2.log</code></pre>
+<p class="example-desc">Follow and retry if file is recreated:</p>
+<pre><code>tail -F logfile.log</code></pre>
+<p class="example-desc">Show lines starting from line N:</p>
+<pre><code>tail -n +100 file.txt</code></pre>
+<p class="example-desc">Follow and show last 50 lines:</p>
+<pre><code>tail -n 50 -f logfile.log</code></pre>
+<p class="example-desc">Follow with process termination when process dies:</p>
+<pre><code>tail -f --pid=12345 logfile.log</code></pre>
+<h2>Flags</h2>
+<li><code>-n, --lines</code> Output last N lines (or +N for starting from line N)</li>
+<li><code>-c, --bytes</code> Output last N bytes</li>
+<li><code>-f, --follow</code> Output appended data as file grows</li>
+<li><code>-F</code> Same as -f but retry if file is recreated</li>
+<li><code>--pid</code> With -f, terminate after process ID dies</li>
+<li><code>-q, --quiet</code> Never print headers</li>
+<li><code>-v, --verbose</code> Always print headers</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error occurred</li>
+<h2>Common Errors</h2>
+<li>"cannot open for reading" - File doesn't exist or no permission</li>
+<li>Follow not working - File might be buffered, try -F</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

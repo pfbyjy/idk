@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>free - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>free</h1>
+<p class="summary">Display amount of free and used memory in the system.</p>
+<p class="see-also">See also: <a href="top.html">top</a>, <a href="vmstat.html">vmstat</a>, /<a href="proc.html">proc</a>/<a href="meminfo.html">meminfo</a></p>
+<p class="keywords">Keywords: memory, ram, usage, available, swap, system</p>
+<p class="example-desc">Show memory usage:</p>
+<pre><code>free</code></pre>
+<p class="example-desc">Show in human-readable format:</p>
+<pre><code>free -h</code></pre>
+<p class="example-desc">Show in megabytes:</p>
+<pre><code>free -m</code></pre>
+<p class="example-desc">Show in gigabytes:</p>
+<pre><code>free -g</code></pre>
+<p class="example-desc">Show total line:</p>
+<pre><code>free -t</code></pre>
+<p class="example-desc">Continuous monitoring (every 2 seconds):</p>
+<pre><code>free -s 2</code></pre>
+<p class="example-desc">Show with count limit:</p>
+<pre><code>free -s 2 -c 5</code></pre>
+<p class="example-desc">Show wide output (buffers and cache separate):</p>
+<pre><code>free -w</code></pre>
+<h2>Output Columns</h2>
+<p class="example-desc">`total`: Total installed memory</p>
+<p class="example-desc">`used`: Used memory</p>
+<p class="example-desc">`free`: Unused memory</p>
+<p class="example-desc">`shared`: Memory used by tmpfs</p>
+<p class="example-desc">`buff/cache`: Memory used for buffers and cache</p>
+<p class="example-desc">`available`: Memory available for starting new apps</p>
+<h2>Understanding Memory</h2>
+<p class="example-desc">`available` is what you should look at, not `free`</p>
+<p class="example-desc">Linux uses "free" memory for disk cache</p>
+<p class="example-desc">High `buff/cache` is normal and good</p>
+<p class="example-desc">Low `available` means you're running out of memory</p>
+<p class="example-desc">Swap usage indicates memory pressure</p>
+<h2>Flags</h2>
+<li><code>-h, --human</code> Human-readable output</li>
+<li><code>-b, --bytes</code> Show in bytes</li>
+<li><code>-k, --kibi</code> Show in kibibytes (default)</li>
+<li><code>-m, --mebi</code> Show in mebibytes</li>
+<li><code>-g, --gibi</code> Show in gibibytes</li>
+<li><code>-t, --total</code> Show total line</li>
+<li><code>-s N, --seconds N</code> Continuous display every N seconds</li>
+<li><code>-c N, --count N</code> Display N times, then exit</li>
+<li><code>-w, --wide</code> Wide output</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<h2>Common Errors</h2>
+<li>"free" shows lots of used memory - Check "available", cache is reclaimable</li>
+<li>Swap being used - Not always bad, but check if available is low</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

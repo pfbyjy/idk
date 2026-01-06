@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>top - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>top</h1>
+<p class="summary">Display real-time system processes. Interactive process viewer.</p>
+<p class="see-also">See also: <a href="htop.html">htop</a>, <a href="ps.html">ps</a>, <a href="vmstat.html">vmstat</a></p>
+<p class="keywords">Keywords: process, monitor, cpu, memory, real-time, system</p>
+<p class="example-desc">Start top:</p>
+<pre><code>top</code></pre>
+<p class="example-desc">Sort by memory usage:</p>
+<pre><code>top -o %MEM</code></pre>
+<p class="example-desc">Sort by CPU usage:</p>
+<pre><code>top -o %CPU</code></pre>
+<p class="example-desc">Show specific user's processes:</p>
+<pre><code>top -u username</code></pre>
+<p class="example-desc">Batch mode (non-interactive, good for scripts):</p>
+<pre><code>top -b -n 1</code></pre>
+<p class="example-desc">Show specific number of processes:</p>
+<pre><code>top -n 1 -b | head -20</code></pre>
+<p class="example-desc">Update every 5 seconds:</p>
+<pre><code>top -d 5</code></pre>
+<p class="example-desc">Show specific process:</p>
+<pre><code>top -p 1234</code></pre>
+<p class="example-desc">Show multiple PIDs:</p>
+<pre><code>top -p 1234,5678,9012</code></pre>
+<h2>Interactive Commands (while running)</h2>
+<p class="example-desc">`q`: Quit</p>
+<p class="example-desc">`h`: Help</p>
+<p class="example-desc">`k`: Kill a process (enter PID)</p>
+<p class="example-desc">`r`: Renice (change priority)</p>
+<p class="example-desc">`M`: Sort by memory</p>
+<p class="example-desc">`P`: Sort by CPU</p>
+<p class="example-desc">`T`: Sort by time</p>
+<p class="example-desc">`u`: Filter by user</p>
+<p class="example-desc">`c`: Toggle full command path</p>
+<p class="example-desc">`1`: Toggle individual CPU cores</p>
+<p class="example-desc">`m`: Toggle memory display mode</p>
+<p class="example-desc">`t`: Toggle task/cpu display</p>
+<p class="example-desc">`Space`: Refresh immediately</p>
+<p class="example-desc">`W`: Write config to ~/.toprc</p>
+<h2>Display Fields</h2>
+<p class="example-desc">`PID`: Process ID</p>
+<p class="example-desc">`USER`: Process owner</p>
+<p class="example-desc">`PR`: Priority</p>
+<p class="example-desc">`NI`: Nice value (-20 to 19)</p>
+<p class="example-desc">`VIRT`: Virtual memory</p>
+<p class="example-desc">`RES`: Resident memory (physical)</p>
+<p class="example-desc">`SHR`: Shared memory</p>
+<p class="example-desc">`S`: Process state</p>
+<p class="example-desc">`%CPU`: CPU percentage</p>
+<p class="example-desc">`%MEM`: Memory percentage</p>
+<p class="example-desc">`TIME+`: CPU time</p>
+<h2>Flags</h2>
+<li><code>-d</code> Delay between updates (seconds)</li>
+<li><code>-n</code> Number of iterations</li>
+<li><code>-b</code> Batch mode</li>
+<li><code>-u</code> Show only user's processes</li>
+<li><code>-p</code> Monitor specific PIDs</li>
+<li><code>-o</code> Sort by field</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<h2>Common Errors</h2>
+<li>Can't see all processes - Run as root for full visibility</li>
+<li>Display messed up - Press 'W' to save config, or delete ~/.toprc</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

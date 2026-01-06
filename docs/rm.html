@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rm - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>rm</h1>
+<p class="summary">Remove files and directories. DANGEROUS - no trash, files are gone forever.</p>
+<p class="see-also">See also: <a href="rmdir.html">rmdir</a>, <a href="trash.html">trash</a>, <a href="shred.html">shred</a></p>
+<p class="keywords">Keywords: remove, delete, files, erase</p>
+<p class="example-desc">Remove a file:</p>
+<pre><code>rm file.txt</code></pre>
+<p class="example-desc">Remove multiple files:</p>
+<pre><code>rm file1.txt file2.txt file3.txt</code></pre>
+<p class="example-desc">Remove a directory and all its contents (DANGEROUS):</p>
+<pre><code>rm -r directory/</code></pre>
+<p class="example-desc">Remove forcefully without prompting (VERY DANGEROUS):</p>
+<pre><code>rm -rf directory/</code></pre>
+<p class="example-desc">Remove interactively (prompt for each file):</p>
+<pre><code>rm -i file.txt</code></pre>
+<p class="example-desc">Remove verbose (show what's being deleted):</p>
+<pre><code>rm -v file.txt</code></pre>
+<p class="example-desc">Remove files matching a pattern:</p>
+<pre><code>rm *.tmp</code></pre>
+<p class="example-desc">Remove all files in directory but keep directory:</p>
+<pre><code>rm -r directory/*</code></pre>
+<p class="example-desc">Dry run - show what would be deleted (using find):</p>
+<pre><code>find . -name "*.tmp" -print</code></pre>
+<h2>Flags</h2>
+<li><code>-r, -R, --recursive</code> Remove directories and their contents</li>
+<li><code>-f, --force</code> Ignore nonexistent files, never prompt</li>
+<li><code>-i</code> Prompt before every removal</li>
+<li><code>-I</code> Prompt once before removing more than three files</li>
+<li><code>-v, --verbose</code> Explain what is being done</li>
+<li><code>-d, --dir</code> Remove empty directories</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error occurred</li>
+<h2>Common Errors</h2>
+<li>"Is a directory" - Use -r to remove directories</li>
+<li>"Permission denied" - No write permission on parent directory</li>
+<li>"Directory not empty" - Use -r for non-empty directories</li>
+<li>"No such file or directory" - File doesn't exist (use -f to ignore)</li>
+<h2>DANGER ZONE</h2>
+<p class="example-desc">`rm -rf /` - DO NOT RUN - destroys entire system</p>
+<p class="example-desc">`rm -rf *` - Deletes everything in current directory</p>
+<p class="example-desc">`rm -rf ~` - Deletes entire home directory</p>
+<p class="example-desc">Always double-check paths before running rm -rf</p>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wget - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>wget</h1>
+<p class="summary">Download files from the web. Non-interactive network downloader.</p>
+<p class="see-also">See also: <a href="curl.html">curl</a>, <a href="aria2c.html">aria2c</a></p>
+<p class="keywords">Keywords: download, http, https, ftp, web, file, url</p>
+<p class="example-desc">Download a file:</p>
+<pre><code>wget https://example.com/file.zip</code></pre>
+<p class="example-desc">Download and save with different name:</p>
+<pre><code>wget -O output.zip https://example.com/file.zip</code></pre>
+<p class="example-desc">Download to specific directory:</p>
+<pre><code>wget -P /path/to/dir https://example.com/file.zip</code></pre>
+<p class="example-desc">Resume interrupted download:</p>
+<pre><code>wget -c https://example.com/largefile.zip</code></pre>
+<p class="example-desc">Download in background:</p>
+<pre><code>wget -b https://example.com/file.zip</code></pre>
+<p class="example-desc">Download quietly (no output):</p>
+<pre><code>wget -q https://example.com/file.zip</code></pre>
+<p class="example-desc">Download multiple files:</p>
+<pre><code>wget -i urls.txt</code></pre>
+<p class="example-desc">Download entire website:</p>
+<pre><code>wget -r -l 2 https://example.com/</code></pre>
+<p class="example-desc">Mirror a website:</p>
+<pre><code>wget --mirror -p --convert-links https://example.com/</code></pre>
+<p class="example-desc">Limit download speed:</p>
+<pre><code>wget --limit-rate=200k https://example.com/file.zip</code></pre>
+<p class="example-desc">Download with authentication:</p>
+<pre><code>wget --user=username --password=password https://example.com/file</code></pre>
+<p class="example-desc">Ignore SSL certificate errors:</p>
+<pre><code>wget --no-check-certificate https://example.com/file</code></pre>
+<p class="example-desc">Set custom User-Agent:</p>
+<pre><code>wget --user-agent="Mozilla/5.0" https://example.com/</code></pre>
+<p class="example-desc">Download only specific file types:</p>
+<pre><code>wget -r -A "*.pdf" https://example.com/</code></pre>
+<h2>Flags</h2>
+<li><code>-O</code> Output to specific file</li>
+<li><code>-P</code> Save to directory</li>
+<li><code>-c, --continue</code> Resume download</li>
+<li><code>-b, --background</code> Run in background</li>
+<li><code>-q, --quiet</code> Quiet mode</li>
+<li><code>-i</code> Read URLs from file</li>
+<li><code>-r, --recursive</code> Recursive download</li>
+<li><code>-l, --level</code> Max recursion depth</li>
+<li><code>--mirror</code> Mirror website</li>
+<li><code>--limit-rate</code> Limit download speed</li>
+<li><code>--user, --password</code> Authentication</li>
+<li><code>--no-check-certificate</code> Skip SSL verification</li>
+<li><code>-A, --accept</code> Accept file patterns</li>
+<li><code>-R, --reject</code> Reject file patterns</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Generic error</li>
+<li><code>2</code> Parse error</li>
+<li><code>3</code> File I/O error</li>
+<li><code>4</code> Network failure</li>
+<li><code>5</code> SSL verification failure</li>
+<li><code>6</code> Authentication failure</li>
+<li><code>7</code> Protocol error</li>
+<li><code>8</code> Server error</li>
+<h2>Common Errors</h2>
+<li>"Unable to resolve host" - DNS issue or typo in URL</li>
+<li>"Connection refused" - Server down or blocked</li>
+<li>"404 Not Found" - URL doesn't exist</li>
+<li>"SSL certificate problem" - Use --no-check-certificate (carefully)</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ssh - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>ssh</h1>
+<p class="summary">Secure Shell - connect to remote machines securely.</p>
+<p class="see-also">See also: <a href="scp.html">scp</a>, <a href="rsync.html">rsync</a>, <a href="sftp.html">sftp</a>, <a href="ssh-keygen.html">ssh-keygen</a></p>
+<p class="keywords">Keywords: remote, connect, shell, login, secure, tunnel, server</p>
+<p class="example-desc">Connect to remote host:</p>
+<pre><code>ssh user@hostname</code></pre>
+<p class="example-desc">Connect on different port:</p>
+<pre><code>ssh -p 2222 user@hostname</code></pre>
+<p class="example-desc">Connect with specific key:</p>
+<pre><code>ssh -i ~/.ssh/mykey.pem user@hostname</code></pre>
+<p class="example-desc">Run command on remote host:</p>
+<pre><code>ssh user@hostname "ls -la /var/log"</code></pre>
+<p class="example-desc">Enable X11 forwarding:</p>
+<pre><code>ssh -X user@hostname</code></pre>
+<p class="example-desc">Local port forward (access remote service locally):</p>
+<pre><code>ssh -L 8080:localhost:80 user@hostname</code></pre>
+<p class="example-desc">Remote port forward (expose local service to remote):</p>
+<pre><code>ssh -R 8080:localhost:80 user@hostname</code></pre>
+<p class="example-desc">Dynamic port forward (SOCKS proxy):</p>
+<pre><code>ssh -D 1080 user@hostname</code></pre>
+<p class="example-desc">SSH tunnel in background:</p>
+<pre><code>ssh -fN -L 8080:localhost:80 user@hostname</code></pre>
+<p class="example-desc">Keep connection alive:</p>
+<pre><code>ssh -o ServerAliveInterval=60 user@hostname</code></pre>
+<p class="example-desc">Use jump host (bastion):</p>
+<pre><code>ssh -J jumphost user@destination</code></pre>
+<p class="example-desc">Verbose output for debugging:</p>
+<pre><code>ssh -v user@hostname</code></pre>
+<p class="example-desc">Copy SSH key to remote (enable passwordless):</p>
+<pre><code>ssh-copy-id user@hostname</code></pre>
+<p class="example-desc">Run with pseudo-terminal:</p>
+<pre><code>ssh -t user@hostname "sudo command"</code></pre>
+<h2>Flags</h2>
+<li><code>-p</code> Port number</li>
+<li><code>-i</code> Identity file (private key)</li>
+<li><code>-L</code> Local port forward</li>
+<li><code>-R</code> Remote port forward</li>
+<li><code>-D</code> Dynamic port forward (SOCKS)</li>
+<li><code>-N</code> No remote command (for tunnels)</li>
+<li><code>-f</code> Background after authentication</li>
+<li><code>-t</code> Force pseudo-terminal</li>
+<li><code>-v</code> Verbose mode (-vv, -vvv for more)</li>
+<li><code>-X</code> X11 forwarding</li>
+<li><code>-J</code> Jump host</li>
+<li><code>-o</code> Set option</li>
+<h2>Config File (~/.ssh/config)</h2>
+<pre><code>`</code></pre>
+<p>Host myserver</p>
+<p>    HostName server.example.com</p>
+<p>    User myuser</p>
+<p>    Port 22</p>
+<p>    IdentityFile ~/.ssh/mykey</p>
+<pre><code>`</code></pre>
+<p>Then just: <code>ssh myserver</code></p>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Generic error</li>
+<li><code>255</code> SSH error</li>
+<h2>Common Errors</h2>
+<li>"Permission denied (publickey)" - Wrong key, or need password auth</li>
+<li>"Connection refused" - SSH not running or firewall blocking</li>
+<li>"Host key verification failed" - Remove old key from known_hosts</li>
+<li>"Connection timed out" - Network issue or wrong host</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rsync - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>rsync</h1>
+<p class="summary">Fast, versatile file synchronization. Better than scp for large transfers.</p>
+<p class="see-also">See also: <a href="scp.html">scp</a>, <a href="cp.html">cp</a>, <a href="rclone.html">rclone</a></p>
+<p class="keywords">Keywords: sync, copy, transfer, backup, remote, incremental, mirror</p>
+<p class="example-desc">Sync directory locally:</p>
+<pre><code>rsync -av source/ destination/</code></pre>
+<p class="example-desc">Sync to remote host:</p>
+<pre><code>rsync -av source/ user@host:/path/to/destination/</code></pre>
+<p class="example-desc">Sync from remote host:</p>
+<pre><code>rsync -av user@host:/path/to/source/ destination/</code></pre>
+<p class="example-desc">Sync with delete (mirror exactly):</p>
+<pre><code>rsync -av --delete source/ destination/</code></pre>
+<p class="example-desc">Dry run (show what would happen):</p>
+<pre><code>rsync -av --dry-run source/ destination/</code></pre>
+<p class="example-desc">Show progress:</p>
+<pre><code>rsync -av --progress source/ destination/</code></pre>
+<p class="example-desc">Use SSH on different port:</p>
+<pre><code>rsync -av -e "ssh -p 2222" source/ user@host:/path/</code></pre>
+<p class="example-desc">Exclude files/patterns:</p>
+<pre><code>rsync -av --exclude='*.log' source/ destination/</code></pre>
+<p class="example-desc">Exclude from file:</p>
+<pre><code>rsync -av --exclude-from='exclude.txt' source/ destination/</code></pre>
+<p class="example-desc">Compress during transfer:</p>
+<pre><code>rsync -avz source/ user@host:/path/</code></pre>
+<p class="example-desc">Limit bandwidth (KB/s):</p>
+<pre><code>rsync -av --bwlimit=1000 source/ destination/</code></pre>
+<p class="example-desc">Resume interrupted transfer:</p>
+<pre><code>rsync -av --partial source/ destination/</code></pre>
+<p class="example-desc">Preserve hard links:</p>
+<pre><code>rsync -avH source/ destination/</code></pre>
+<h2>IMPORTANT: Trailing Slash Behavior</h2>
+<p class="example-desc">`rsync source destination/` → Creates `destination/source/`</p>
+<p class="example-desc">`rsync source/ destination/` → Copies contents into `destination/`</p>
+<p>Always use trailing slash on source to copy contents!</p>
+<h2>Flags</h2>
+<li><code>-a, --archive</code> Archive mode (preserves everything)</li>
+<li><code>-v, --verbose</code> Verbose output</li>
+<li><code>-z, --compress</code> Compress during transfer</li>
+<li><code>-P</code> Same as --partial --progress</li>
+<li><code>--progress</code> Show progress</li>
+<li><code>--partial</code> Keep partial files</li>
+<li><code>--delete</code> Delete extraneous files from destination</li>
+<li><code>--dry-run</code> Show what would be done</li>
+<li><code>-e</code> Specify remote shell</li>
+<li><code>--exclude</code> Exclude pattern</li>
+<li><code>--include</code> Include pattern</li>
+<li><code>--bwlimit</code> Limit bandwidth</li>
+<li><code>-H</code> Preserve hard links</li>
+<li><code>-n</code> Dry run</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Syntax/usage error</li>
+<li><code>2</code> Protocol incompatibility</li>
+<li><code>3</code> File selection error</li>
+<li><code>5</code> Error starting client-server protocol</li>
+<li><code>10</code> Error in socket I/O</li>
+<li><code>11</code> Error in file I/O</li>
+<li><code>12</code> Error in rsync protocol data</li>
+<li><code>23</code> Partial transfer due to error</li>
+<li><code>24</code> Partial transfer due to vanished source files</li>
+<h2>Common Errors</h2>
+<li>"Permission denied" - Check file permissions or SSH access</li>
+<li>"No such file or directory" - Check source path</li>
+<li>Unexpected behavior - Check trailing slashes on paths</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

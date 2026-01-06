@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>touch - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>touch</h1>
+<p class="summary">Create empty files or update file timestamps.</p>
+<p class="see-also">See also: <a href="mkdir.html">mkdir</a>, <a href="stat.html">stat</a>, <a href="date.html">date</a></p>
+<p class="keywords">Keywords: create, file, empty, timestamp, modify</p>
+<p class="example-desc">Create an empty file:</p>
+<pre><code>touch newfile.txt</code></pre>
+<p class="example-desc">Create multiple files:</p>
+<pre><code>touch file1.txt file2.txt file3.txt</code></pre>
+<p class="example-desc">Update modification time to now:</p>
+<pre><code>touch existing_file.txt</code></pre>
+<p class="example-desc">Set specific modification time:</p>
+<pre><code>touch -t 202401151200 file.txt</code></pre>
+<p class="example-desc">Set time to same as another file:</p>
+<pre><code>touch -r reference_file.txt target_file.txt</code></pre>
+<p class="example-desc">Create file only if it doesn't exist:</p>
+<pre><code>touch -c nonexistent.txt</code></pre>
+<p class="example-desc">Update only access time:</p>
+<pre><code>touch -a file.txt</code></pre>
+<p class="example-desc">Update only modification time:</p>
+<pre><code>touch -m file.txt</code></pre>
+<h2>Flags</h2>
+<li><code>-a</code> Change only access time</li>
+<li><code>-m</code> Change only modification time</li>
+<li><code>-c, --no-create</code> Don't create file if it doesn't exist</li>
+<li><code>-t</code> Use specified time [[CC]YY]MMDDhhmm[.ss]</li>
+<li><code>-r, --reference</code> Use time from another file</li>
+<li><code>-d, --date</code> Parse string and use as time</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error occurred</li>
+<h2>Common Errors</h2>
+<li>"Permission denied" - Can't write to directory</li>
+<li>"No such file or directory" - Parent directory doesn't exist</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

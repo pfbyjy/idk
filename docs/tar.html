@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tar - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>tar</h1>
+<p class="summary">Archive files. Create, extract, and manipulate tar archives.</p>
+<p class="see-also">See also: <a href="gzip.html">gzip</a>, <a href="zip.html">zip</a>, <a href="7z.html">7z</a></p>
+<p class="keywords">Keywords: archive, compress, extract, backup, tarball, bundle</p>
+<p class="example-desc">Create archive:</p>
+<pre><code>tar -cvf archive.tar directory/</code></pre>
+<p class="example-desc">Create gzip compressed archive:</p>
+<pre><code>tar -czvf archive.tar.gz directory/</code></pre>
+<p class="example-desc">Create bzip2 compressed archive:</p>
+<pre><code>tar -cjvf archive.tar.bz2 directory/</code></pre>
+<p class="example-desc">Create xz compressed archive:</p>
+<pre><code>tar -cJvf archive.tar.xz directory/</code></pre>
+<p class="example-desc">Extract archive:</p>
+<pre><code>tar -xvf archive.tar</code></pre>
+<p class="example-desc">Extract gzip archive:</p>
+<pre><code>tar -xzvf archive.tar.gz</code></pre>
+<p class="example-desc">Extract to specific directory:</p>
+<pre><code>tar -xvf archive.tar -C /destination/</code></pre>
+<p class="example-desc">List contents without extracting:</p>
+<pre><code>tar -tvf archive.tar</code></pre>
+<p class="example-desc">Extract specific file:</p>
+<pre><code>tar -xvf archive.tar path/to/file</code></pre>
+<p class="example-desc">Add files to existing archive:</p>
+<pre><code>tar -rvf archive.tar newfile.txt</code></pre>
+<p class="example-desc">Exclude files:</p>
+<pre><code>tar -cvf archive.tar --exclude='*.log' directory/</code></pre>
+<p class="example-desc">Exclude directory:</p>
+<pre><code>tar -cvf archive.tar --exclude='node_modules' directory/</code></pre>
+<p class="example-desc">Create from file list:</p>
+<pre><code>tar -cvf archive.tar -T filelist.txt</code></pre>
+<p class="example-desc">Extract with strip (remove leading path components):</p>
+<pre><code>tar -xvf archive.tar --strip-components=1</code></pre>
+<p class="example-desc">Preserve permissions:</p>
+<pre><code>tar -cvpf archive.tar directory/</code></pre>
+<h2>Mnemonic: tar flags</h2>
+<li>**c** - Create</li>
+<li>**x** - eXtract</li>
+<li>**t** - lisT</li>
+<li>**v** - Verbose</li>
+<li>**f** - File (archive name comes next)</li>
+<li>**z** - gZip</li>
+<li>**j** - bzip2 (j for bz2)</li>
+<li>**J** - xz</li>
+<h2>Common Patterns</h2>
+<p class="example-desc">`.tar` - Uncompressed archive</p>
+<p class="example-desc">`.tar.gz` or `.tgz` - Gzip compressed</p>
+<p class="example-desc">`.tar.bz2` - Bzip2 compressed</p>
+<p class="example-desc">`.tar.xz` - XZ compressed (best compression)</p>
+<h2>Flags</h2>
+<li><code>-c, --create</code> Create archive</li>
+<li><code>-x, --extract</code> Extract archive</li>
+<li><code>-t, --list</code> List contents</li>
+<li><code>-v, --verbose</code> Verbose output</li>
+<li><code>-f, --file</code> Archive file name</li>
+<li><code>-z, --gzip</code> Use gzip compression</li>
+<li><code>-j, --bzip2</code> Use bzip2 compression</li>
+<li><code>-J, --xz</code> Use xz compression</li>
+<li><code>-C, --directory</code> Change to directory</li>
+<li><code>-p, --preserve-permissions</code> Preserve permissions</li>
+<li><code>--exclude</code> Exclude pattern</li>
+<li><code>--strip-components</code> Strip path components</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Some files differ</li>
+<li><code>2</code> Fatal error</li>
+<h2>Common Errors</h2>
+<li>"Cannot open: No such file" - Check archive path</li>
+<li>"Not in gzip format" - Use correct flag (-z, -j, or none)</li>
+<li>"Permission denied" - Need write access or run as root</li>
+<li>Order matters: `tar -cvf` not `tar -fvc`</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

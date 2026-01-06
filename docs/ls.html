@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ls - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>ls</h1>
+<p class="summary">List directory contents. The most basic file exploration command.</p>
+<p class="see-also">See also: <a href="tree.html">tree</a>, <a href="find.html">find</a>, <a href="dir.html">dir</a></p>
+<p class="keywords">Keywords: list, files, directory, folder, contents, show</p>
+<p class="example-desc">List files in current directory:</p>
+<pre><code>ls</code></pre>
+<p class="example-desc">List all files including hidden (dotfiles):</p>
+<pre><code>ls -a</code></pre>
+<p class="example-desc">List with detailed info (permissions, size, date):</p>
+<pre><code>ls -l</code></pre>
+<p class="example-desc">List all files with details (combine -l and -a):</p>
+<pre><code>ls -la</code></pre>
+<p class="example-desc">List with human-readable file sizes:</p>
+<pre><code>ls -lh</code></pre>
+<p class="example-desc">List sorted by modification time (newest first):</p>
+<pre><code>ls -lt</code></pre>
+<p class="example-desc">List sorted by size (largest first):</p>
+<pre><code>ls -lS</code></pre>
+<p class="example-desc">List only directories:</p>
+<pre><code>ls -d */</code></pre>
+<p class="example-desc">List files matching a pattern:</p>
+<pre><code>ls *.txt</code></pre>
+<p class="example-desc">List with file type indicators (/ for dirs, * for executables):</p>
+<pre><code>ls -F</code></pre>
+<p class="example-desc">List recursively:</p>
+<pre><code>ls -R</code></pre>
+<p class="example-desc">List one file per line:</p>
+<pre><code>ls -1</code></pre>
+<h2>Flags</h2>
+<li><code>-a, --all</code> Show hidden files (starting with .)</li>
+<li><code>-l</code> Long format with details</li>
+<li><code>-h, --human-readable</code> Human-readable sizes (use with -l)</li>
+<li><code>-t</code> Sort by modification time</li>
+<li><code>-S</code> Sort by file size</li>
+<li><code>-r, --reverse</code> Reverse sort order</li>
+<li><code>-R, --recursive</code> List subdirectories recursively</li>
+<li><code>-d, --directory</code> List directories themselves, not contents</li>
+<li><code>-1</code> One file per line</li>
+<li><code>-F, --classify</code> Append indicator (*/=>@|) to entries</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Minor problem (e.g., cannot access subdirectory)</li>
+<li><code>2</code> Serious trouble (e.g., cannot access command-line argument)</li>
+<h2>Common Errors</h2>
+<li>"No such file or directory" - Path doesn't exist, check spelling</li>
+<li>"Permission denied" - Need read permission on directory</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

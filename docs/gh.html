@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gh - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>gh</h1>
+<p class="summary">GitHub CLI - work with GitHub from the command line.</p>
+<p class="see-also">See also: <a href="git.html">git</a></p>
+<p class="keywords">Keywords: github, pull request, issue, pr, repo, clone, fork</p>
+<p class="example-desc">Clone a repository:</p>
+<pre><code>gh repo clone owner/repo</code></pre>
+<p class="example-desc">Create a new repository:</p>
+<pre><code>gh repo create my-repo --public</code></pre>
+<p class="example-desc">Fork a repository:</p>
+<pre><code>gh repo fork owner/repo</code></pre>
+<p class="example-desc">Create a pull request:</p>
+<pre><code>gh pr create --title "Title" --body "Description"</code></pre>
+<p class="example-desc">Create PR interactively:</p>
+<pre><code>gh pr create</code></pre>
+<p class="example-desc">List open pull requests:</p>
+<pre><code>gh pr list</code></pre>
+<p class="example-desc">View pull request:</p>
+<pre><code>gh pr view 123</code></pre>
+<p class="example-desc">Checkout a pull request locally:</p>
+<pre><code>gh pr checkout 123</code></pre>
+<p class="example-desc">Merge a pull request:</p>
+<pre><code>gh pr merge 123</code></pre>
+<p class="example-desc">Create an issue:</p>
+<pre><code>gh issue create --title "Bug" --body "Description"</code></pre>
+<p class="example-desc">List issues:</p>
+<pre><code>gh issue list</code></pre>
+<p class="example-desc">View issue:</p>
+<pre><code>gh issue view 123</code></pre>
+<p class="example-desc">View repo in browser:</p>
+<pre><code>gh repo view --web</code></pre>
+<p class="example-desc">View PR in browser:</p>
+<pre><code>gh pr view 123 --web</code></pre>
+<p class="example-desc">Check CI status:</p>
+<pre><code>gh pr checks</code></pre>
+<p class="example-desc">List releases:</p>
+<pre><code>gh release list</code></pre>
+<p class="example-desc">Download release assets:</p>
+<pre><code>gh release download v1.0.0</code></pre>
+<p class="example-desc">Authenticate:</p>
+<pre><code>gh auth login</code></pre>
+<h2>Flags</h2>
+<li><code>--web, -w</code> Open in browser</li>
+<li><code>--title, -t</code> Title for PR/issue</li>
+<li><code>--body, -b</code> Body/description</li>
+<li><code>--repo, -R</code> Specify repository</li>
+<li><code>--json</code> Output as JSON</li>
+<li><code>--jq</code> Filter JSON output</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<li><code>4</code> Authentication required</li>
+<h2>Common Errors</h2>
+<li>"gh auth login" - Need to authenticate first</li>
+<li>"not a git repository" - Must be in a git repo</li>
+<li>"no pull requests match" - PR doesn't exist or wrong number</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

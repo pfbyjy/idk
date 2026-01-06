@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uniq - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>uniq</h1>
+<p class="summary">Report or filter out repeated lines. INPUT MUST BE SORTED FIRST.</p>
+<p class="see-also">See also: <a href="sort.html">sort</a>, <a href="comm.html">comm</a>, <a href="wc.html">wc</a></p>
+<p class="keywords">Keywords: unique, duplicate, repeated, lines, count, dedupe</p>
+<p class="example-desc">Remove adjacent duplicate lines (MUST be sorted first):</p>
+<pre><code>sort file.txt | uniq</code></pre>
+<p class="example-desc">Count occurrences of each line:</p>
+<pre><code>sort file.txt | uniq -c</code></pre>
+<p class="example-desc">Show only duplicate lines:</p>
+<pre><code>sort file.txt | uniq -d</code></pre>
+<p class="example-desc">Show only unique lines (appear once):</p>
+<pre><code>sort file.txt | uniq -u</code></pre>
+<p class="example-desc">Ignore case when comparing:</p>
+<pre><code>sort file.txt | uniq -i</code></pre>
+<p class="example-desc">Skip first N fields when comparing:</p>
+<pre><code>sort file.txt | uniq -f 1</code></pre>
+<p class="example-desc">Skip first N characters when comparing:</p>
+<pre><code>sort file.txt | uniq -s 5</code></pre>
+<p class="example-desc">Compare only first N characters:</p>
+<pre><code>sort file.txt | uniq -w 10</code></pre>
+<p class="example-desc">Count and sort by frequency:</p>
+<pre><code>sort file.txt | uniq -c | sort -rn</code></pre>
+<p class="example-desc">Remove duplicates from unsorted file (using sort):</p>
+<pre><code>sort -u file.txt</code></pre>
+<h2>Flags</h2>
+<li><code>-c, --count</code> Prefix lines with number of occurrences</li>
+<li><code>-d, --repeated</code> Only print duplicate lines</li>
+<li><code>-u, --unique</code> Only print unique lines (that appear once)</li>
+<li><code>-i, --ignore-case</code> Ignore differences in case</li>
+<li><code>-f, --skip-fields</code> Skip first N fields</li>
+<li><code>-s, --skip-chars</code> Skip first N characters</li>
+<li><code>-w, --check-chars</code> Compare only first N characters</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<h2>Common Errors</h2>
+<li>Not removing all duplicates - INPUT MUST BE SORTED FIRST</li>
+<li>Using on unsorted data - uniq only removes adjacent duplicates</li>
+<li>Use sort -u if you just need unique lines from unsorted data</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>df - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>df</h1>
+<p class="summary">Report file system disk space usage.</p>
+<p class="see-also">See also: <a href="du.html">du</a>, <a href="lsblk.html">lsblk</a>, <a href="fdisk.html">fdisk</a></p>
+<p class="keywords">Keywords: disk, space, usage, free, filesystem, storage, mount</p>
+<p class="example-desc">Show disk usage for all filesystems:</p>
+<pre><code>df</code></pre>
+<p class="example-desc">Show in human-readable format:</p>
+<pre><code>df -h</code></pre>
+<p class="example-desc">Show specific filesystem:</p>
+<pre><code>df -h /dev/sda1</code></pre>
+<p class="example-desc">Show usage for a path:</p>
+<pre><code>df -h /home</code></pre>
+<p class="example-desc">Show filesystem type:</p>
+<pre><code>df -T</code></pre>
+<p class="example-desc">Show only local filesystems:</p>
+<pre><code>df -l</code></pre>
+<p class="example-desc">Show inodes instead of blocks:</p>
+<pre><code>df -i</code></pre>
+<p class="example-desc">Show in 1K blocks:</p>
+<pre><code>df -k</code></pre>
+<p class="example-desc">Show in MB:</p>
+<pre><code>df -m</code></pre>
+<p class="example-desc">Exclude specific filesystem types:</p>
+<pre><code>df -x tmpfs -x devtmpfs</code></pre>
+<p class="example-desc">Show total:</p>
+<pre><code>df -h --total</code></pre>
+<h2>Output Columns</h2>
+<p class="example-desc">`Filesystem`: Device or mount point</p>
+<p class="example-desc">`Size`: Total size</p>
+<p class="example-desc">`Used`: Space used</p>
+<p class="example-desc">`Avail`: Space available</p>
+<p class="example-desc">`Use%`: Percentage used</p>
+<p class="example-desc">`Mounted on`: Mount point</p>
+<h2>Flags</h2>
+<li><code>-h, --human-readable</code> Human-readable sizes (K, M, G)</li>
+<li><code>-H</code> Human-readable with powers of 1000</li>
+<li><code>-T, --print-type</code> Show filesystem type</li>
+<li><code>-i, --inodes</code> Show inode information</li>
+<li><code>-l, --local</code> Only local filesystems</li>
+<li><code>-t, --type</code> Only show specific filesystem type</li>
+<li><code>-x, --exclude-type</code> Exclude filesystem type</li>
+<li><code>--total</code> Add total row</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<h2>Common Errors</h2>
+<li>"No such file or directory" - Path doesn't exist</li>
+<li>Shows 100% but du shows less - Reserved space for root (usually 5%)</li>
+<li>Filesystem not showing - May be a pseudo-filesystem</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

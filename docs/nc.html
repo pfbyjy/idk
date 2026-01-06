@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nc - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>nc</h1>
+<p class="summary">Netcat - networking Swiss Army knife. TCP/UDP connections and listeners.</p>
+<p class="see-also">See also: <a href="curl.html">curl</a>, <a href="telnet.html">telnet</a>, <a href="socat.html">socat</a></p>
+<p class="keywords">Keywords: network, tcp, udp, port, listen, connect, socket, test</p>
+<p class="example-desc">Test if port is open:</p>
+<pre><code>nc -zv host 80</code></pre>
+<p class="example-desc">Scan port range:</p>
+<pre><code>nc -zv host 20-25</code></pre>
+<p class="example-desc">Connect to a port:</p>
+<pre><code>nc host 80</code></pre>
+<p class="example-desc">Listen on a port:</p>
+<pre><code>nc -l 8080</code></pre>
+<p class="example-desc">Listen and keep listening after disconnect:</p>
+<pre><code>nc -lk 8080</code></pre>
+<p class="example-desc">Send file:</p>
+<pre><code>nc host 1234 < file.txt</code></pre>
+<p class="example-desc">Receive file:</p>
+<pre><code>nc -l 1234 > received.txt</code></pre>
+<p class="example-desc">Simple chat (one listens, one connects):</p>
+<pre><code>nc -l 1234</code></pre>
+<p class="example-desc">UDP mode:</p>
+<pre><code>nc -u host 53</code></pre>
+<p class="example-desc">Set connection timeout:</p>
+<pre><code>nc -w 5 host 80</code></pre>
+<p class="example-desc">HTTP request:</p>
+<pre><code>echo -e "GET / HTTP/1.1\r\nHost: example.com\r\n\r\n" | nc example.com 80</code></pre>
+<p class="example-desc">Port forwarding (simple proxy):</p>
+<pre><code>nc -l 8080 | nc host 80</code></pre>
+<p class="example-desc">Verbose output:</p>
+<pre><code>nc -v host 80</code></pre>
+<h2>Flags</h2>
+<li><code>-z</code> Zero-I/O mode (scanning)</li>
+<li><code>-v</code> Verbose</li>
+<li><code>-l</code> Listen mode</li>
+<li><code>-k</code> Keep listening after disconnect</li>
+<li><code>-u</code> UDP mode</li>
+<li><code>-w</code> Timeout in seconds</li>
+<li><code>-p</code> Local port</li>
+<li><code>-n</code> No DNS resolution</li>
+<li><code>-4</code> IPv4 only</li>
+<li><code>-6</code> IPv6 only</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<h2>Common Uses</h2>
+<p class="example-desc">**Port scanning**: `nc -zv host 1-1000`</p>
+<p class="example-desc">**Banner grabbing**: `echo "" | nc -v host 22`</p>
+<p class="example-desc">**Test HTTP**: `echo -e "GET /\r\n" | nc host 80`</p>
+<p class="example-desc">**Check if listening**: `nc -zv localhost 3000`</p>
+<p class="example-desc">**Quick file transfer**: listener receives, sender sends</p>
+<h2>Common Errors</h2>
+<li>"Connection refused" - Nothing listening on that port</li>
+<li>"Connection timed out" - Firewall or host unreachable</li>
+<li>"Address already in use" - Port already bound</li>
+<h2>Variants</h2>
+<p>Different systems have different netcat versions:</p>
+<p class="example-desc">GNU netcat</p>
+<p class="example-desc">OpenBSD netcat (ncat)</p>
+<p class="example-desc">ncat (from nmap)</p>
+<p>Flags may vary slightly between versions.</p>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
