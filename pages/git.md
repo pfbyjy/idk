@@ -1,7 +1,7 @@
 # git
 
 > Distributed version control system. Track changes, collaborate, manage code history.
-> See also: gh, git-log, git-diff, git-branch
+> See also: gh
 > Keywords: version control, vcs, commit, branch, merge, push, pull, repository, clone
 
 - Clone a repository:

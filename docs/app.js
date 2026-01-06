@@ -14,6 +14,7 @@ const pages = [
     { name: "du", summary: "Estimate file and directory space usage", keywords: ["disk", "usage", "size"] },
     { name: "find", summary: "Search for files in a directory hierarchy", keywords: ["search", "files", "locate"] },
     { name: "free", summary: "Display amount of free and used memory", keywords: ["memory", "ram", "usage"] },
+    { name: "gh", summary: "GitHub CLI - work with GitHub from the command line", keywords: ["github", "pull request", "issue", "pr"] },
     { name: "git", summary: "Distributed version control system", keywords: ["version", "control", "commit"] },
     { name: "grep", summary: "Search for patterns in files", keywords: ["search", "pattern", "regex"] },
     { name: "head", summary: "Output the first part of files", keywords: ["first", "lines", "beginning"] },
