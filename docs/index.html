@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>idk - man pages for agents</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>idk</h1>
+            <p class="tagline">man pages for agents</p>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Search commands... (e.g., 'http request', 'find files')" autofocus>
+        </div>
+
+        <main>
+            <div id="results" class="command-grid"></div>
+            <div id="page-content" class="page-content hidden"></div>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
