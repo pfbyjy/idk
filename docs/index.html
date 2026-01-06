@@ -13,6 +13,37 @@
             <p class="tagline">man pages for agents</p>
         </header>
 
+        <section class="about">
+            <p><strong>idk</strong> is a command reference designed for AI agents. Unlike traditional man pages, idk pages prioritize:</p>
+            <ul>
+                <li><strong>Examples first</strong> &mdash; real commands you can run immediately</li>
+                <li><strong>Exit codes</strong> &mdash; know what 0, 1, 127 actually mean</li>
+                <li><strong>Common errors</strong> &mdash; what goes wrong and how to fix it</li>
+                <li><strong>Semantic search</strong> &mdash; find commands by what you want to do</li>
+            </ul>
+
+            <h3>Installation</h3>
+            <pre><code>cargo install idk</code></pre>
+
+            <h3>Agent Usage</h3>
+            <pre><code># Look up a specific command
+idk curl
+
+# Search by what you want to do
+idk "download a file"
+idk "find large files"
+
+# Get JSON output for parsing
+idk curl --json
+
+# List all available pages
+idk --list</code></pre>
+
+            <p>Add to your agent's system prompt:</p>
+            <pre><code>When you need help with a CLI command, run: idk &lt;command&gt;
+When you're not sure which command to use, run: idk "&lt;what you want to do&gt;"</code></pre>
+        </section>
+
         <div class="search-container">
             <input type="text" id="search" placeholder="Search commands..." autofocus>
         </div>
