@@ -591,3 +591,136 @@ fn main() {
         println!("{}", format_search_results(&results, cli.json));
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const SAMPLE_PAGE: &str = r#"# curl
+
+> Transfer data to/from a server using URLs.
+> See also: wget, httpie
+> Keywords: http, https, request, download
+
+- Download a file:
+
+`curl https://example.com`
+
+- POST request with JSON:
+
+`curl -X POST -d '{"key":"value"}' https://api.example.com`
+
+## Flags
+
+- `-X, --request`: HTTP method
+- `-d, --data`: Send data
+
+## Exit Codes
+
+- `0`: Success
+- `6`: Could not resolve host
+
+## Common Errors
+
+- "Could not resolve host" - Check DNS
+"#;
+
+    #[test]
+    fn test_parse_page_name() {
+        let page = parse_page(SAMPLE_PAGE);
+        assert_eq!(page.name, "curl");
+    }
+
+    #[test]
+    fn test_parse_page_summary() {
+        let page = parse_page(SAMPLE_PAGE);
+        assert_eq!(page.summary, "Transfer data to/from a server using URLs.");
+    }
+
+    #[test]
+    fn test_parse_page_see_also() {
+        let page = parse_page(SAMPLE_PAGE);
+        assert_eq!(page.see_also, vec!["wget", "httpie"]);
+    }
+
+    #[test]
+    fn test_parse_page_keywords() {
+        let page = parse_page(SAMPLE_PAGE);
+        assert_eq!(page.keywords, vec!["http", "https", "request", "download"]);
+    }
+
+    #[test]
+    fn test_parse_page_examples() {
+        let page = parse_page(SAMPLE_PAGE);
+        assert_eq!(page.examples.len(), 2);
+        assert_eq!(page.examples[0].description, "Download a file:");
+        assert_eq!(page.examples[0].command, "curl https://example.com");
+        assert_eq!(page.examples[1].description, "POST request with JSON:");
+    }
+
+    #[test]
+    fn test_parse_page_flags() {
+        let page = parse_page(SAMPLE_PAGE);
+        assert_eq!(page.flags.len(), 2);
+        assert_eq!(page.flags[0].flag, "-X, --request");
+        assert_eq!(page.flags[0].description, "HTTP method");
+    }
+
+    #[test]
+    fn test_parse_page_exit_codes() {
+        let page = parse_page(SAMPLE_PAGE);
+        assert_eq!(page.exit_codes.len(), 2);
+        assert_eq!(page.exit_codes[0].code, 0);
+        assert_eq!(page.exit_codes[0].meaning, "Success");
+        assert_eq!(page.exit_codes[1].code, 6);
+    }
+
+    #[test]
+    fn test_parse_page_errors() {
+        let page = parse_page(SAMPLE_PAGE);
+        assert_eq!(page.errors.len(), 1);
+        assert!(page.errors[0].contains("Could not resolve host"));
+    }
+
+    #[test]
+    fn test_parse_empty_page() {
+        let page = parse_page("");
+        assert_eq!(page.name, "");
+        assert!(page.examples.is_empty());
+    }
+
+    #[test]
+    fn test_parse_minimal_page() {
+        let content = "# test\n\n> A test command.\n";
+        let page = parse_page(content);
+        assert_eq!(page.name, "test");
+        assert_eq!(page.summary, "A test command.");
+    }
+
+    #[test]
+    fn test_json_serialization() {
+        let page = parse_page(SAMPLE_PAGE);
+        let json = serde_json::to_string(&page).unwrap();
+        assert!(json.contains("\"name\":\"curl\""));
+        assert!(json.contains("\"keywords\""));
+    }
+
+    #[test]
+    fn test_page_index_deserialization() {
+        let json = r#"{"pages": ["curl", "git", "grep"]}"#;
+        let index: PageIndex = serde_json::from_str(json).unwrap();
+        assert_eq!(index.pages.len(), 3);
+        assert_eq!(index.pages[0], "curl");
+    }
+
+    #[test]
+    fn test_search_result_serialization() {
+        let result = SearchResult {
+            name: "curl".to_string(),
+            summary: "Transfer data".to_string(),
+            score: 100,
+        };
+        let json = serde_json::to_string(&result).unwrap();
+        assert!(json.contains("\"score\":100"));
+    }
+}
