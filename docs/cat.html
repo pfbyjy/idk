@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cat - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>cat</h1>
+<p class="summary">Concatenate and print files. Display file contents to stdout.</p>
+<p class="see-also">See also: <a href="less.html">less</a>, <a href="head.html">head</a>, <a href="tail.html">tail</a>, <a href="bat.html">bat</a></p>
+<p class="keywords">Keywords: print, display, file, contents, concatenate, read, show</p>
+<p class="example-desc">Display contents of a file:</p>
+<pre><code>cat file.txt</code></pre>
+<p class="example-desc">Display contents of multiple files:</p>
+<pre><code>cat file1.txt file2.txt</code></pre>
+<p class="example-desc">Display with line numbers:</p>
+<pre><code>cat -n file.txt</code></pre>
+<p class="example-desc">Display with line numbers (non-empty lines only):</p>
+<pre><code>cat -b file.txt</code></pre>
+<p class="example-desc">Display showing non-printing characters:</p>
+<pre><code>cat -v file.txt</code></pre>
+<p class="example-desc">Display showing tabs as ^I:</p>
+<pre><code>cat -T file.txt</code></pre>
+<p class="example-desc">Display showing line endings as $:</p>
+<pre><code>cat -E file.txt</code></pre>
+<p class="example-desc">Show all special characters (-vET combined):</p>
+<pre><code>cat -A file.txt</code></pre>
+<p class="example-desc">Concatenate files into one:</p>
+<pre><code>cat file1.txt file2.txt > combined.txt</code></pre>
+<p class="example-desc">Append file to another:</p>
+<pre><code>cat file2.txt >> file1.txt</code></pre>
+<p class="example-desc">Create a file with content (heredoc):</p>
+<pre><code>cat << 'EOF' > file.txt</code></pre>
+<p class="example-desc">Number only non-blank lines and squeeze blank lines:</p>
+<pre><code>cat -bs file.txt</code></pre>
+<h2>Flags</h2>
+<li><code>-n, --number</code> Number all output lines</li>
+<li><code>-b, --number-nonblank</code> Number non-empty output lines</li>
+<li><code>-s, --squeeze-blank</code> Squeeze multiple blank lines into one</li>
+<li><code>-v, --show-nonprinting</code> Show non-printing characters</li>
+<li><code>-E, --show-ends</code> Display $ at end of each line</li>
+<li><code>-T, --show-tabs</code> Display TAB as ^I</li>
+<li><code>-A, --show-all</code> Equivalent to -vET</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error occurred</li>
+<h2>Common Errors</h2>
+<li>"No such file or directory" - File doesn't exist</li>
+<li>"Is a directory" - Can't cat a directory</li>
+<li>"Permission denied" - No read permission</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

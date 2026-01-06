@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sudo - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>sudo</h1>
+<p class="summary">Execute a command as another user (usually root).</p>
+<p class="see-also">See also: <a href="su.html">su</a>, <a href="doas.html">doas</a>, <a href="visudo.html">visudo</a></p>
+<p class="keywords">Keywords: root, admin, superuser, elevate, privilege, permission</p>
+<p class="example-desc">Run command as root:</p>
+<pre><code>sudo command</code></pre>
+<p class="example-desc">Run command as specific user:</p>
+<pre><code>sudo -u username command</code></pre>
+<p class="example-desc">Start root shell:</p>
+<pre><code>sudo -i</code></pre>
+<p class="example-desc">Start shell preserving environment:</p>
+<pre><code>sudo -s</code></pre>
+<p class="example-desc">Edit file with root privileges:</p>
+<pre><code>sudo nano /etc/hosts</code></pre>
+<p class="example-desc">Run last command as root:</p>
+<pre><code>sudo !!</code></pre>
+<p class="example-desc">List allowed commands for current user:</p>
+<pre><code>sudo -l</code></pre>
+<p class="example-desc">Extend sudo timeout:</p>
+<pre><code>sudo -v</code></pre>
+<p class="example-desc">Invalidate sudo credentials (require password again):</p>
+<pre><code>sudo -k</code></pre>
+<p class="example-desc">Run command preserving environment:</p>
+<pre><code>sudo -E command</code></pre>
+<p class="example-desc">Set HOME to target user's home:</p>
+<pre><code>sudo -H command</code></pre>
+<p class="example-desc">Run command in background:</p>
+<pre><code>sudo -b command</code></pre>
+<p class="example-desc">Run as group:</p>
+<pre><code>sudo -g groupname command</code></pre>
+<h2>Flags</h2>
+<li><code>-u user</code> Run as specified user</li>
+<li><code>-i</code> Login shell as root</li>
+<li><code>-s</code> Run shell (not login shell)</li>
+<li><code>-l</code> List allowed commands</li>
+<li><code>-v</code> Update timestamp (extend timeout)</li>
+<li><code>-k</code> Invalidate timestamp</li>
+<li><code>-E</code> Preserve environment</li>
+<li><code>-H</code> Set HOME to target's home</li>
+<li><code>-b</code> Run in background</li>
+<li><code>-n</code> Non-interactive (fail if password needed)</li>
+<li><code>-A</code> Use askpass helper</li>
+<h2>Exit Codes</h2>
+<li>Command's exit code on success</li>
+<li><code>1</code> Generic error</li>
+<li><code>127</code> Command not found</li>
+<h2>Configuration</h2>
+<p class="example-desc">Edit with `sudo visudo` (never edit /etc/sudoers directly)</p>
+<p class="example-desc">Per-user rules in `/etc/sudoers.d/`</p>
+<p class="example-desc">Syntax: `user host = (runas) commands`</p>
+<h2>Common Errors</h2>
+<li>"user is not in the sudoers file" - Add user to sudo group</li>
+<li>"sorry, try again" - Wrong password</li>
+<li>"command not found" - Command not in secure_path</li>
+<li>"unable to resolve host" - Hostname mismatch in /etc/hosts</li>
+<h2>Security Tips</h2>
+<p class="example-desc">Use `sudo` over `su` for audit trail</p>
+<p class="example-desc">Don't use `sudo -i` for single commands</p>
+<p class="example-desc">Check what you're running: `sudo -l`</p>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

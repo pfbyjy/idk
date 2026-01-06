@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tr - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>tr</h1>
+<p class="summary">Translate or delete characters. Works on stdin only.</p>
+<p class="see-also">See also: <a href="sed.html">sed</a>, <a href="awk.html">awk</a></p>
+<p class="keywords">Keywords: translate, replace, characters, delete, squeeze, case</p>
+<p class="example-desc">Convert lowercase to uppercase:</p>
+<pre><code>echo "hello" | tr 'a-z' 'A-Z'</code></pre>
+<p class="example-desc">Convert uppercase to lowercase:</p>
+<pre><code>echo "HELLO" | tr 'A-Z' 'a-z'</code></pre>
+<p class="example-desc">Replace spaces with newlines:</p>
+<pre><code>echo "a b c" | tr ' ' '\n'</code></pre>
+<p class="example-desc">Delete specific characters:</p>
+<pre><code>echo "hello123" | tr -d '0-9'</code></pre>
+<p class="example-desc">Delete all digits:</p>
+<pre><code>tr -d '[:digit:]' < file.txt</code></pre>
+<p class="example-desc">Squeeze repeated characters:</p>
+<pre><code>echo "hellooooo" | tr -s 'o'</code></pre>
+<p class="example-desc">Replace non-alphanumeric with newlines:</p>
+<pre><code>tr -cs '[:alnum:]' '\n' < file.txt</code></pre>
+<p class="example-desc">Remove all whitespace:</p>
+<pre><code>tr -d '[:space:]' < file.txt</code></pre>
+<p class="example-desc">Convert Windows line endings to Unix:</p>
+<pre><code>tr -d '\r' < windows.txt > unix.txt</code></pre>
+<p class="example-desc">ROT13 encoding:</p>
+<pre><code>echo "hello" | tr 'A-Za-z' 'N-ZA-Mn-za-m'</code></pre>
+<p class="example-desc">Replace multiple characters:</p>
+<pre><code>echo "abc" | tr 'abc' 'xyz'</code></pre>
+<p class="example-desc">Complement character set (delete all except):</p>
+<pre><code>tr -cd '[:print:]' < file.txt</code></pre>
+<h2>Character Classes</h2>
+<p class="example-desc">`[:alnum:]`: Alphanumeric</p>
+<p class="example-desc">`[:alpha:]`: Letters</p>
+<p class="example-desc">`[:digit:]`: Digits</p>
+<p class="example-desc">`[:space:]`: Whitespace</p>
+<p class="example-desc">`[:lower:]`: Lowercase</p>
+<p class="example-desc">`[:upper:]`: Uppercase</p>
+<p class="example-desc">`[:punct:]`: Punctuation</p>
+<p class="example-desc">`[:print:]`: Printable characters</p>
+<h2>Flags</h2>
+<li><code>-d, --delete</code> Delete characters in SET1</li>
+<li><code>-s, --squeeze-repeats</code> Squeeze repeated characters to single</li>
+<li><code>-c, -C, --complement</code> Use complement of SET1</li>
+<li><code>-t, --truncate-set1</code> Truncate SET1 to length of SET2</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<h2>Common Errors</h2>
+<li>"extra operand" - Too many arguments, check quoting</li>
+<li>Only works on stdin - Can't give filename directly, use < redirect</li>
+<li>Character not translated - Check if using right case in set</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

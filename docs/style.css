@@ -30,6 +30,33 @@ body {
     padding: 2rem 1rem;
 }
 
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+}
+
+nav .brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+nav .back-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+nav .back-link:hover {
+    text-decoration: underline;
+}
+
+/* Header (index page) */
 header {
     text-align: center;
     margin-bottom: 2rem;
@@ -47,6 +74,7 @@ header h1 {
     font-size: 1.1rem;
 }
 
+/* Search */
 .search-container {
     margin-bottom: 2rem;
 }
@@ -71,6 +99,7 @@ header h1 {
     color: var(--text-muted);
 }
 
+/* Command grid */
 .command-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -78,6 +107,7 @@ header h1 {
 }
 
 .command-card {
+    display: block;
     background: var(--bg-secondary);
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -107,6 +137,7 @@ header h1 {
     white-space: nowrap;
 }
 
+/* Page content */
 .page-content {
     background: var(--bg-secondary);
     border: 1px solid var(--border);
@@ -114,33 +145,36 @@ header h1 {
     padding: 2rem;
 }
 
-.page-content.hidden {
-    display: none;
-}
-
-.back-link {
-    display: inline-block;
-    color: var(--accent);
-    text-decoration: none;
-    margin-bottom: 1.5rem;
-    font-size: 0.9rem;
-}
-
-.back-link:hover {
-    text-decoration: underline;
-}
-
 .page-content h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: var(--accent);
     margin-bottom: 0.5rem;
 }
 
-.page-content blockquote {
+.page-content .summary {
+    font-size: 1.1rem;
     color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.page-content .see-also {
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.page-content .see-also a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+.page-content .see-also a:hover {
+    text-decoration: underline;
+}
+
+.page-content .keywords {
+    color: var(--text-muted);
+    font-size: 0.9rem;
     margin-bottom: 1.5rem;
-    padding-left: 0;
-    border: none;
 }
 
 .page-content h2 {
@@ -151,6 +185,12 @@ header h1 {
     border-bottom: 1px solid var(--border);
 }
 
+.page-content .example-desc {
+    color: var(--yellow);
+    margin-bottom: 0.25rem;
+    margin-top: 1rem;
+}
+
 .page-content ul {
     list-style: none;
     margin-bottom: 1rem;
@@ -158,11 +198,15 @@ header h1 {
 
 .page-content li {
     margin-bottom: 0.5rem;
+    padding-left: 1rem;
+}
+
+.page-content li code:first-child {
+    color: var(--accent);
 }
 
 .page-content p {
     margin-bottom: 0.5rem;
-    color: var(--yellow);
 }
 
 .page-content code {
@@ -187,6 +231,7 @@ header h1 {
     color: var(--green);
 }
 
+/* Footer */
 footer {
     margin-top: 3rem;
     text-align: center;
@@ -210,12 +255,7 @@ footer code {
     border-radius: 4px;
 }
 
-.no-results {
-    text-align: center;
-    color: var(--text-muted);
-    padding: 2rem;
-}
-
+/* Responsive */
 @media (max-width: 600px) {
     header h1 {
         font-size: 2rem;
@@ -227,5 +267,9 @@ footer code {
 
     .page-content {
         padding: 1.5rem;
+    }
+
+    .page-content h1 {
+        font-size: 1.75rem;
     }
 }

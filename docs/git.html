@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>git</h1>
+<p class="summary">Distributed version control system. Track changes, collaborate, manage code history.</p>
+<p class="see-also">See also: <a href="gh.html">gh</a></p>
+<p class="keywords">Keywords: version control, vcs, commit, branch, merge, push, pull, repository, clone</p>
+<p class="example-desc">Clone a repository:</p>
+<pre><code>git clone https://github.com/user/repo.git</code></pre>
+<p class="example-desc">Check status of working directory:</p>
+<pre><code>git status</code></pre>
+<p class="example-desc">Stage files for commit:</p>
+<pre><code>git add file.txt</code></pre>
+<p class="example-desc">Stage all changes:</p>
+<pre><code>git add -A</code></pre>
+<p class="example-desc">Commit staged changes:</p>
+<pre><code>git commit -m "commit message"</code></pre>
+<p class="example-desc">Push to remote:</p>
+<pre><code>git push origin branch-name</code></pre>
+<p class="example-desc">Pull latest changes:</p>
+<pre><code>git pull origin branch-name</code></pre>
+<p class="example-desc">Create and switch to new branch:</p>
+<pre><code>git checkout -b new-branch</code></pre>
+<p class="example-desc">Switch branches:</p>
+<pre><code>git checkout branch-name</code></pre>
+<p class="example-desc">View commit history:</p>
+<pre><code>git log --oneline -n 10</code></pre>
+<p class="example-desc">View changes (unstaged):</p>
+<pre><code>git diff</code></pre>
+<p class="example-desc">View changes (staged):</p>
+<pre><code>git diff --staged</code></pre>
+<p class="example-desc">Stash changes temporarily:</p>
+<pre><code>git stash</code></pre>
+<p class="example-desc">Apply stashed changes:</p>
+<pre><code>git stash pop</code></pre>
+<p class="example-desc">Reset file to last commit:</p>
+<pre><code>git checkout -- file.txt</code></pre>
+<p class="example-desc">Undo last commit (keep changes):</p>
+<pre><code>git reset --soft HEAD~1</code></pre>
+<p class="example-desc">Fetch without merging:</p>
+<pre><code>git fetch origin</code></pre>
+<h2>Flags</h2>
+<li><code>-m</code> Commit message</li>
+<li><code>-b</code> Create new branch</li>
+<li><code>-A, --all</code> Stage all changes</li>
+<li><code>--oneline</code> Compact log format</li>
+<li><code>--staged</code> Show staged changes in diff</li>
+<li><code>--soft</code> Reset keeping changes staged</li>
+<li><code>--hard</code> Reset discarding all changes (DANGEROUS)</li>
+<li><code>-f, --force</code> Force operation (DANGEROUS for push)</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Generic error</li>
+<li><code>128</code> Fatal error (bad repo, permission denied, etc.)</li>
+<h2>Common Errors</h2>
+<li>"fatal: not a git repository" - Run git init or cd to repo directory</li>
+<li>"Your branch is behind" - Run git pull before pushing</li>
+<li>"CONFLICT" - Resolve merge conflicts manually, then git add and commit</li>
+<li>"Permission denied (publickey)" - Set up SSH keys or use HTTPS with token</li>
+<li>"refusing to merge unrelated histories" - Use --allow-unrelated-histories flag</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

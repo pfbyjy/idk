@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chown - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>chown</h1>
+<p class="summary">Change file owner and group.</p>
+<p class="see-also">See also: <a href="chmod.html">chmod</a>, <a href="chgrp.html">chgrp</a>, <a href="stat.html">stat</a></p>
+<p class="keywords">Keywords: owner, permissions, group, ownership, user</p>
+<p class="example-desc">Change owner of a file:</p>
+<pre><code>chown user file.txt</code></pre>
+<p class="example-desc">Change owner and group:</p>
+<pre><code>chown user:group file.txt</code></pre>
+<p class="example-desc">Change only group:</p>
+<pre><code>chown :group file.txt</code></pre>
+<p class="example-desc">Change owner recursively:</p>
+<pre><code>chown -R user directory/</code></pre>
+<p class="example-desc">Change owner and group recursively:</p>
+<pre><code>chown -R user:group directory/</code></pre>
+<p class="example-desc">Copy ownership from another file:</p>
+<pre><code>chown --reference=source_file target_file</code></pre>
+<p class="example-desc">Change owner with verbose output:</p>
+<pre><code>chown -v user file.txt</code></pre>
+<p class="example-desc">Change owner without following symlinks:</p>
+<pre><code>chown -h user symlink</code></pre>
+<p class="example-desc">Change ownership from specific user only:</p>
+<pre><code>chown --from=olduser newuser file.txt</code></pre>
+<h2>Flags</h2>
+<li><code>-R, --recursive</code> Operate recursively</li>
+<li><code>-v, --verbose</code> Output for every file processed</li>
+<li><code>-c, --changes</code> Like verbose but only report changes</li>
+<li><code>-h, --no-dereference</code> Affect symbolic links instead of referenced file</li>
+<li><code>--reference</code> Use another file's ownership</li>
+<li><code>--from</code> Only change if current owner matches</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<h2>Common Errors</h2>
+<li>"Operation not permitted" - Only root can change ownership</li>
+<li>"invalid user" - User doesn't exist</li>
+<li>"invalid group" - Group doesn't exist</li>
+<li>Use numeric IDs if user/group name doesn't exist</li>
+<h2>Common Patterns</h2>
+<p class="example-desc">`chown www-data:www-data /var/www/` - Web server files</p>
+<p class="example-desc">`chown -R $USER:$USER ~/` - Reclaim home directory</p>
+<p class="example-desc">`chown root:root /etc/important` - System files</p>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

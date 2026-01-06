@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scp - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>scp</h1>
+<p class="summary">Secure copy - transfer files over SSH.</p>
+<p class="see-also">See also: <a href="rsync.html">rsync</a>, <a href="sftp.html">sftp</a>, <a href="ssh.html">ssh</a></p>
+<p class="keywords">Keywords: copy, transfer, remote, secure, upload, download</p>
+<p class="example-desc">Copy file to remote host:</p>
+<pre><code>scp file.txt user@host:/path/to/destination/</code></pre>
+<p class="example-desc">Copy file from remote host:</p>
+<pre><code>scp user@host:/path/to/file.txt ./</code></pre>
+<p class="example-desc">Copy directory recursively:</p>
+<pre><code>scp -r directory/ user@host:/path/to/destination/</code></pre>
+<p class="example-desc">Use specific SSH port:</p>
+<pre><code>scp -P 2222 file.txt user@host:/path/</code></pre>
+<p class="example-desc">Use specific SSH key:</p>
+<pre><code>scp -i ~/.ssh/mykey.pem file.txt user@host:/path/</code></pre>
+<p class="example-desc">Copy between two remote hosts:</p>
+<pre><code>scp user1@host1:/file user2@host2:/path/</code></pre>
+<p class="example-desc">Preserve file attributes:</p>
+<pre><code>scp -p file.txt user@host:/path/</code></pre>
+<p class="example-desc">Limit bandwidth (in Kbit/s):</p>
+<pre><code>scp -l 1000 file.txt user@host:/path/</code></pre>
+<p class="example-desc">Verbose output:</p>
+<pre><code>scp -v file.txt user@host:/path/</code></pre>
+<p class="example-desc">Compress during transfer:</p>
+<pre><code>scp -C largefile.txt user@host:/path/</code></pre>
+<p class="example-desc">Copy multiple files:</p>
+<pre><code>scp file1.txt file2.txt user@host:/path/</code></pre>
+<p class="example-desc">Use jump host:</p>
+<pre><code>scp -o ProxyJump=jumphost file.txt user@destination:/path/</code></pre>
+<h2>Flags</h2>
+<li><code>-r</code> Recursive (for directories)</li>
+<li><code>-P</code> Port (note uppercase P, unlike ssh)</li>
+<li><code>-i</code> Identity file (key)</li>
+<li><code>-p</code> Preserve modification times and modes</li>
+<li><code>-C</code> Enable compression</li>
+<li><code>-l</code> Limit bandwidth (Kbit/s)</li>
+<li><code>-v</code> Verbose mode</li>
+<li><code>-q</code> Quiet mode</li>
+<li><code>-o</code> SSH option</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> General error</li>
+<li>Other SSH exit codes apply</li>
+<h2>Common Errors</h2>
+<li>"No such file or directory" - Remote path doesn't exist</li>
+<li>"Permission denied" - Wrong permissions or auth failure</li>
+<li>"scp: not a regular file" - Use -r for directories</li>
+<li>Consider using rsync for large/incremental transfers</li>
+<h2>Note</h2>
+<p>For new projects, consider using <code>rsync</code> or <code>sftp</code> instead - scp has some deprecated features and rsync is more efficient for large transfers.</p>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mv - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>mv</h1>
+<p class="summary">Move or rename files and directories.</p>
+<p class="see-also">See also: <a href="cp.html">cp</a>, <a href="rm.html">rm</a>, <a href="rename.html">rename</a></p>
+<p class="keywords">Keywords: move, rename, relocate, files</p>
+<p class="example-desc">Rename a file:</p>
+<pre><code>mv old_name.txt new_name.txt</code></pre>
+<p class="example-desc">Move a file to a directory:</p>
+<pre><code>mv file.txt /path/to/directory/</code></pre>
+<p class="example-desc">Move multiple files to a directory:</p>
+<pre><code>mv file1.txt file2.txt /path/to/directory/</code></pre>
+<p class="example-desc">Move a directory:</p>
+<pre><code>mv source_dir/ /path/to/destination/</code></pre>
+<p class="example-desc">Move interactively (prompt before overwrite):</p>
+<pre><code>mv -i source.txt destination.txt</code></pre>
+<p class="example-desc">Move without overwriting existing files:</p>
+<pre><code>mv -n source.txt destination.txt</code></pre>
+<p class="example-desc">Move verbose (show what's being moved):</p>
+<pre><code>mv -v source.txt destination.txt</code></pre>
+<p class="example-desc">Force move (overwrite without prompting):</p>
+<pre><code>mv -f source.txt destination.txt</code></pre>
+<p class="example-desc">Move and create backup of destination:</p>
+<pre><code>mv -b source.txt destination.txt</code></pre>
+<h2>Flags</h2>
+<li><code>-i, --interactive</code> Prompt before overwrite</li>
+<li><code>-n, --no-clobber</code> Don't overwrite existing files</li>
+<li><code>-f, --force</code> Don't prompt before overwriting</li>
+<li><code>-v, --verbose</code> Explain what is being done</li>
+<li><code>-b</code> Make backup of each existing destination file</li>
+<li><code>-u, --update</code> Move only when source is newer</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error occurred</li>
+<h2>Common Errors</h2>
+<li>"cannot move to itself" - Source and destination are the same</li>
+<li>"Directory not empty" - Can't overwrite non-empty directory</li>
+<li>"Permission denied" - No write permission on source or destination</li>
+<li>"No such file or directory" - Source doesn't exist</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

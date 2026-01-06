@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>npm - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>npm</h1>
+<p class="summary">Node Package Manager. Manage JavaScript packages.</p>
+<p class="see-also">See also: <a href="yarn.html">yarn</a>, <a href="pnpm.html">pnpm</a>, <a href="npx.html">npx</a></p>
+<p class="keywords">Keywords: node, javascript, package, install, dependency, module</p>
+<p class="example-desc">Install dependencies from package.json:</p>
+<pre><code>npm install</code></pre>
+<p class="example-desc">Install a package:</p>
+<pre><code>npm install package-name</code></pre>
+<p class="example-desc">Install as dev dependency:</p>
+<pre><code>npm install -D package-name</code></pre>
+<p class="example-desc">Install globally:</p>
+<pre><code>npm install -g package-name</code></pre>
+<p class="example-desc">Install specific version:</p>
+<pre><code>npm install package@1.2.3</code></pre>
+<p class="example-desc">Uninstall a package:</p>
+<pre><code>npm uninstall package-name</code></pre>
+<p class="example-desc">Update all packages:</p>
+<pre><code>npm update</code></pre>
+<p class="example-desc">Update specific package:</p>
+<pre><code>npm update package-name</code></pre>
+<p class="example-desc">List installed packages:</p>
+<pre><code>npm list</code></pre>
+<p class="example-desc">List top-level only:</p>
+<pre><code>npm list --depth=0</code></pre>
+<p class="example-desc">List outdated packages:</p>
+<pre><code>npm outdated</code></pre>
+<p class="example-desc">Run script from package.json:</p>
+<pre><code>npm run script-name</code></pre>
+<p class="example-desc">Run tests:</p>
+<pre><code>npm test</code></pre>
+<p class="example-desc">Start application:</p>
+<pre><code>npm start</code></pre>
+<p class="example-desc">Initialize new package.json:</p>
+<pre><code>npm init</code></pre>
+<p class="example-desc">Initialize with defaults:</p>
+<pre><code>npm init -y</code></pre>
+<p class="example-desc">Search for packages:</p>
+<pre><code>npm search keyword</code></pre>
+<p class="example-desc">View package info:</p>
+<pre><code>npm info package-name</code></pre>
+<p class="example-desc">Clean cache:</p>
+<pre><code>npm cache clean --force</code></pre>
+<p class="example-desc">Audit for vulnerabilities:</p>
+<pre><code>npm audit</code></pre>
+<p class="example-desc">Fix vulnerabilities:</p>
+<pre><code>npm audit fix</code></pre>
+<h2>Flags</h2>
+<li><code>-g, --global</code> Global installation</li>
+<li><code>-D, --save-dev</code> Save as dev dependency</li>
+<li><code>-S, --save</code> Save as dependency (default)</li>
+<li><code>-E, --save-exact</code> Save exact version</li>
+<li><code>--production</code> Skip dev dependencies</li>
+<li><code>--legacy-peer-deps</code> Ignore peer dependency conflicts</li>
+<li><code>-y, --yes</code> Accept defaults</li>
+<h2>Common Scripts</h2>
+<p class="example-desc">`npm start`: Start the application</p>
+<p class="example-desc">`npm test`: Run tests</p>
+<p class="example-desc">`npm run build`: Build for production</p>
+<p class="example-desc">`npm run dev`: Start development server</p>
+<p class="example-desc">`npm run lint`: Run linter</p>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Generic error</li>
+<h2>Common Errors</h2>
+<li>"EACCES permission denied" - Don't use sudo, fix npm permissions</li>
+<li>"peer dependency" - Use --legacy-peer-deps or fix versions</li>
+<li>"ENOENT" - package.json not found</li>
+<li>"ERESOLVE" - Dependency conflict, check versions</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

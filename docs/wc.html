@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wc - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>wc</h1>
+<p class="summary">Word, line, character, and byte count.</p>
+<p class="see-also">See also: <a href="awk.html">awk</a>, <a href="grep.html">grep</a> -<a href="c.html">c</a></p>
+<p class="keywords">Keywords: count, lines, words, characters, bytes, size</p>
+<p class="example-desc">Count lines, words, and bytes:</p>
+<pre><code>wc file.txt</code></pre>
+<p class="example-desc">Count lines only:</p>
+<pre><code>wc -l file.txt</code></pre>
+<p class="example-desc">Count words only:</p>
+<pre><code>wc -w file.txt</code></pre>
+<p class="example-desc">Count characters:</p>
+<pre><code>wc -m file.txt</code></pre>
+<p class="example-desc">Count bytes:</p>
+<pre><code>wc -c file.txt</code></pre>
+<p class="example-desc">Count lines in multiple files:</p>
+<pre><code>wc -l *.txt</code></pre>
+<p class="example-desc">Count lines from stdin:</p>
+<pre><code>cat file.txt | wc -l</code></pre>
+<p class="example-desc">Count files in directory:</p>
+<pre><code>ls | wc -l</code></pre>
+<p class="example-desc">Count lines matching pattern:</p>
+<pre><code>grep "pattern" file.txt | wc -l</code></pre>
+<p class="example-desc">Get just the number (no filename):</p>
+<pre><code>wc -l < file.txt</code></pre>
+<p class="example-desc">Get longest line length:</p>
+<pre><code>wc -L file.txt</code></pre>
+<h2>Flags</h2>
+<li><code>-l, --lines</code> Print line count</li>
+<li><code>-w, --words</code> Print word count</li>
+<li><code>-m, --chars</code> Print character count</li>
+<li><code>-c, --bytes</code> Print byte count</li>
+<li><code>-L, --max-line-length</code> Print longest line length</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<h2>Common Errors</h2>
+<li>Count off by one - Check if file has trailing newline</li>
+<li>Large byte count for character count - Use -m not -c for UTF-8</li>
+<li>Extra output - Filename included, use < redirect to suppress</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

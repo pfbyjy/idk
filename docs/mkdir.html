@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mkdir - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>mkdir</h1>
+<p class="summary">Create directories.</p>
+<p class="see-also">See also: <a href="rmdir.html">rmdir</a>, <a href="touch.html">touch</a>, <a href="install.html">install</a></p>
+<p class="keywords">Keywords: make, create, directory, folder</p>
+<p class="example-desc">Create a directory:</p>
+<pre><code>mkdir new_directory</code></pre>
+<p class="example-desc">Create multiple directories:</p>
+<pre><code>mkdir dir1 dir2 dir3</code></pre>
+<p class="example-desc">Create parent directories as needed:</p>
+<pre><code>mkdir -p path/to/nested/directory</code></pre>
+<p class="example-desc">Create with specific permissions:</p>
+<pre><code>mkdir -m 755 new_directory</code></pre>
+<p class="example-desc">Create verbose (show what's created):</p>
+<pre><code>mkdir -v new_directory</code></pre>
+<p class="example-desc">Create directory structure for a project:</p>
+<pre><code>mkdir -p project/{src,tests,docs,bin}</code></pre>
+<p class="example-desc">Create dated directory:</p>
+<pre><code>mkdir "$(date +%Y-%m-%d)"</code></pre>
+<h2>Flags</h2>
+<li><code>-p, --parents</code> Create parent directories as needed, no error if exists</li>
+<li><code>-m, --mode</code> Set file mode (permissions)</li>
+<li><code>-v, --verbose</code> Print a message for each created directory</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error occurred</li>
+<h2>Common Errors</h2>
+<li>"File exists" - Directory already exists (use -p to ignore)</li>
+<li>"No such file or directory" - Parent doesn't exist (use -p)</li>
+<li>"Permission denied" - Can't write to parent directory</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

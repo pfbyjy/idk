@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>awk - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>awk</h1>
+<p class="summary">Pattern scanning and text processing language. Extremely powerful for columnar data.</p>
+<p class="see-also">See also: <a href="sed.html">sed</a>, <a href="cut.html">cut</a>, <a href="perl.html">perl</a></p>
+<p class="keywords">Keywords: columns, fields, text, process, pattern, split, csv, data</p>
+<p class="example-desc">Print specific column (space-separated):</p>
+<pre><code>awk '{print $2}' file.txt</code></pre>
+<p class="example-desc">Print multiple columns:</p>
+<pre><code>awk '{print $1, $3}' file.txt</code></pre>
+<p class="example-desc">Print last column:</p>
+<pre><code>awk '{print $NF}' file.txt</code></pre>
+<p class="example-desc">Print second-to-last column:</p>
+<pre><code>awk '{print $(NF-1)}' file.txt</code></pre>
+<p class="example-desc">Use custom field separator:</p>
+<pre><code>awk -F',' '{print $1}' file.csv</code></pre>
+<p class="example-desc">Use tab as separator:</p>
+<pre><code>awk -F'\t' '{print $1}' file.tsv</code></pre>
+<p class="example-desc">Print lines matching pattern:</p>
+<pre><code>awk '/pattern/' file.txt</code></pre>
+<p class="example-desc">Print column where another column matches:</p>
+<pre><code>awk '$1 == "value" {print $2}' file.txt</code></pre>
+<p class="example-desc">Sum a column:</p>
+<pre><code>awk '{sum += $1} END {print sum}' file.txt</code></pre>
+<p class="example-desc">Count lines:</p>
+<pre><code>awk 'END {print NR}' file.txt</code></pre>
+<p class="example-desc">Print line numbers:</p>
+<pre><code>awk '{print NR, $0}' file.txt</code></pre>
+<p class="example-desc">Print lines longer than 80 chars:</p>
+<pre><code>awk 'length > 80' file.txt</code></pre>
+<p class="example-desc">Multiple conditions:</p>
+<pre><code>awk '$1 > 100 && $2 == "active"' file.txt</code></pre>
+<p class="example-desc">Format output:</p>
+<pre><code>awk '{printf "%-10s %5d\n", $1, $2}' file.txt</code></pre>
+<p class="example-desc">Skip header line:</p>
+<pre><code>awk 'NR > 1 {print $1}' file.txt</code></pre>
+<p class="example-desc">Calculate average:</p>
+<pre><code>awk '{sum += $1; count++} END {print sum/count}' file.txt</code></pre>
+<h2>Built-in Variables</h2>
+<p class="example-desc">`$0`: Entire line</p>
+<p class="example-desc">`$1, $2, ...`: Fields</p>
+<p class="example-desc">`NF`: Number of fields in current line</p>
+<p class="example-desc">`NR`: Current line number</p>
+<p class="example-desc">`FS`: Field separator (default: space)</p>
+<p class="example-desc">`OFS`: Output field separator</p>
+<p class="example-desc">`RS`: Record separator (default: newline)</p>
+<h2>Flags</h2>
+<li><code>-F</code> Set field separator</li>
+<li><code>-v var=value</code> Set variable</li>
+<li><code>-f</code> Read program from file</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error in program</li>
+<li><code>2</code> Error in input</li>
+<h2>Common Errors</h2>
+<li>"syntax error" - Check quotes and braces</li>
+<li>Wrong column - Remember columns are 1-indexed</li>
+<li>Whitespace issues - Use -F to set explicit separator</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pip - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>pip</h1>
+<p class="summary">Python package installer.</p>
+<p class="see-also">See also: <a href="pipenv.html">pipenv</a>, <a href="poetry.html">poetry</a>, <a href="conda.html">conda</a></p>
+<p class="keywords">Keywords: python, package, install, dependency, module, pypi</p>
+<p class="example-desc">Install a package:</p>
+<pre><code>pip install package-name</code></pre>
+<p class="example-desc">Install specific version:</p>
+<pre><code>pip install package==1.2.3</code></pre>
+<p class="example-desc">Install from requirements file:</p>
+<pre><code>pip install -r requirements.txt</code></pre>
+<p class="example-desc">Install in user directory:</p>
+<pre><code>pip install --user package-name</code></pre>
+<p class="example-desc">Install in editable/development mode:</p>
+<pre><code>pip install -e .</code></pre>
+<p class="example-desc">Upgrade a package:</p>
+<pre><code>pip install --upgrade package-name</code></pre>
+<p class="example-desc">Upgrade pip itself:</p>
+<pre><code>pip install --upgrade pip</code></pre>
+<p class="example-desc">Uninstall a package:</p>
+<pre><code>pip uninstall package-name</code></pre>
+<p class="example-desc">List installed packages:</p>
+<pre><code>pip list</code></pre>
+<p class="example-desc">List outdated packages:</p>
+<pre><code>pip list --outdated</code></pre>
+<p class="example-desc">Show package info:</p>
+<pre><code>pip show package-name</code></pre>
+<p class="example-desc">Search for packages (deprecated, use pypi.org):</p>
+<pre><code>pip search keyword</code></pre>
+<p class="example-desc">Freeze installed packages:</p>
+<pre><code>pip freeze > requirements.txt</code></pre>
+<p class="example-desc">Download without installing:</p>
+<pre><code>pip download package-name</code></pre>
+<p class="example-desc">Install from git:</p>
+<pre><code>pip install git+https://github.com/user/repo.git</code></pre>
+<p class="example-desc">Check for dependency issues:</p>
+<pre><code>pip check</code></pre>
+<p class="example-desc">Use specific Python version:</p>
+<pre><code>python3.9 -m pip install package</code></pre>
+<h2>Flags</h2>
+<li><code>--user</code> Install to user directory</li>
+<li><code>-e, --editable</code> Editable install (for development)</li>
+<li><code>-r, --requirement</code> Install from requirements file</li>
+<li><code>-U, --upgrade</code> Upgrade package</li>
+<li><code>--no-cache-dir</code> Disable cache</li>
+<li><code>--force-reinstall</code> Reinstall all packages</li>
+<li><code>-t, --target</code> Install to specific directory</li>
+<li><code>-q, --quiet</code> Less output</li>
+<li><code>-v, --verbose</code> More output</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Generic error</li>
+<li><code>2</code> Dependency error</li>
+<h2>Common Errors</h2>
+<li>"Could not find version" - Package doesn't exist or typo</li>
+<li>"Permission denied" - Use --user or virtual environment</li>
+<li>"No matching distribution" - Wrong Python version or OS</li>
+<li>"Requirement already satisfied" - Already installed</li>
+<li>Always use virtual environments to avoid conflicts!</li>
+<h2>Virtual Environment Pattern</h2>
+<p>```bash</p>
+<p>python -m venv venv</p>
+<p>source venv/bin/activate  # Linux/Mac</p>
+<p>pip install -r requirements.txt</p>
+<pre><code>`</code></pre>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

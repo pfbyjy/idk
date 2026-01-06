@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chmod - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>chmod</h1>
+<p class="summary">Change file mode (permissions).</p>
+<p class="see-also">See also: <a href="chown.html">chown</a>, <a href="chgrp.html">chgrp</a>, <a href="stat.html">stat</a>, <a href="umask.html">umask</a></p>
+<p class="keywords">Keywords: permissions, mode, access, read, write, execute, security</p>
+<p class="example-desc">Make file executable:</p>
+<pre><code>chmod +x script.sh</code></pre>
+<p class="example-desc">Remove execute permission:</p>
+<pre><code>chmod -x script.sh</code></pre>
+<p class="example-desc">Set exact permissions (owner rwx, group rx, others rx):</p>
+<pre><code>chmod 755 file</code></pre>
+<p class="example-desc">Set exact permissions (owner rw, group r, others r):</p>
+<pre><code>chmod 644 file</code></pre>
+<p class="example-desc">Owner can read/write, no one else can access:</p>
+<pre><code>chmod 600 file</code></pre>
+<p class="example-desc">Make directory accessible:</p>
+<pre><code>chmod 755 directory/</code></pre>
+<p class="example-desc">Recursive change:</p>
+<pre><code>chmod -R 755 directory/</code></pre>
+<p class="example-desc">Add write permission for group:</p>
+<pre><code>chmod g+w file</code></pre>
+<p class="example-desc">Remove all permissions for others:</p>
+<pre><code>chmod o-rwx file</code></pre>
+<p class="example-desc">Copy permissions from another file:</p>
+<pre><code>chmod --reference=source_file target_file</code></pre>
+<p class="example-desc">Set permissions using symbolic notation:</p>
+<pre><code>chmod u=rwx,g=rx,o=r file</code></pre>
+<p class="example-desc">Make executable by owner only:</p>
+<pre><code>chmod u+x,go-x script.sh</code></pre>
+<h2>Permission Numbers</h2>
+<p class="example-desc">`7`: rwx (read + write + execute = 4+2+1)</p>
+<p class="example-desc">`6`: rw- (read + write = 4+2)</p>
+<p class="example-desc">`5`: r-x (read + execute = 4+1)</p>
+<p class="example-desc">`4`: r-- (read only)</p>
+<p class="example-desc">`3`: -wx (write + execute)</p>
+<p class="example-desc">`2`: -w- (write only)</p>
+<p class="example-desc">`1`: --x (execute only)</p>
+<p class="example-desc">`0`: --- (no permissions)</p>
+<h2>Common Permission Patterns</h2>
+<p class="example-desc">`755`: Executable scripts, directories</p>
+<p class="example-desc">`644`: Regular files</p>
+<p class="example-desc">`600`: Private files (SSH keys)</p>
+<p class="example-desc">`700`: Private directories/scripts</p>
+<p class="example-desc">`777`: Everyone can do everything (AVOID)</p>
+<h2>Symbolic Mode</h2>
+<p class="example-desc">`u`: User (owner)</p>
+<p class="example-desc">`g`: Group</p>
+<p class="example-desc">`o`: Others</p>
+<p class="example-desc">`a`: All (u+g+o)</p>
+<p class="example-desc">`+`: Add permission</p>
+<p class="example-desc">`-`: Remove permission</p>
+<p class="example-desc">`=`: Set exact permission</p>
+<h2>Flags</h2>
+<li><code>-R, --recursive</code> Change recursively</li>
+<li><code>-v, --verbose</code> Output for every file processed</li>
+<li><code>--reference</code> Use another file's permissions</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<h2>Common Errors</h2>
+<li>"Operation not permitted" - Need to own file or be root</li>
+<li>Script won't execute - Needs +x permission</li>
+<li>Web files not loading - Check directory has +x for traversal</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

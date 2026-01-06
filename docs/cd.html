@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cd - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>cd</h1>
+<p class="summary">Change the current working directory. Shell builtin, not a binary.</p>
+<p class="see-also">See also: <a href="pushd.html">pushd</a>, <a href="popd.html">popd</a>, <a href="pwd.html">pwd</a></p>
+<p class="keywords">Keywords: change, directory, navigate, folder, path</p>
+<p class="example-desc">Go to a directory:</p>
+<pre><code>cd /path/to/directory</code></pre>
+<p class="example-desc">Go to home directory:</p>
+<pre><code>cd</code></pre>
+<p class="example-desc">Go to home directory (explicit):</p>
+<pre><code>cd ~</code></pre>
+<p class="example-desc">Go to previous directory:</p>
+<pre><code>cd -</code></pre>
+<p class="example-desc">Go up one directory:</p>
+<pre><code>cd ..</code></pre>
+<p class="example-desc">Go up multiple directories:</p>
+<pre><code>cd ../../..</code></pre>
+<p class="example-desc">Go to root directory:</p>
+<pre><code>cd /</code></pre>
+<p class="example-desc">Go to directory with spaces in name:</p>
+<pre><code>cd "path/with spaces/dir"</code></pre>
+<p class="example-desc">Go to another user's home directory:</p>
+<pre><code>cd ~username</code></pre>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Directory doesn't exist or no permission</li>
+<h2>Common Errors</h2>
+<li>"No such file or directory" - Path doesn't exist</li>
+<li>"Not a directory" - Path is a file, not a directory</li>
+<li>"Permission denied" - No execute permission on directory</li>
+<li>No output on success - cd is silent when it works</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

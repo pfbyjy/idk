@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>head - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>head</h1>
+<p class="summary">Output the first part of files.</p>
+<p class="see-also">See also: <a href="tail.html">tail</a>, <a href="cat.html">cat</a>, <a href="less.html">less</a></p>
+<p class="keywords">Keywords: first, lines, beginning, top, preview</p>
+<p class="example-desc">Show first 10 lines of a file (default):</p>
+<pre><code>head file.txt</code></pre>
+<p class="example-desc">Show first N lines:</p>
+<pre><code>head -n 20 file.txt</code></pre>
+<p class="example-desc">Show first N bytes:</p>
+<pre><code>head -c 100 file.txt</code></pre>
+<p class="example-desc">Show all but last N lines:</p>
+<pre><code>head -n -5 file.txt</code></pre>
+<p class="example-desc">Show first lines of multiple files:</p>
+<pre><code>head file1.txt file2.txt</code></pre>
+<p class="example-desc">Show first line of multiple files (useful for checking):</p>
+<pre><code>head -n 1 *.csv</code></pre>
+<p class="example-desc">Pipe usage - show first 10 results:</p>
+<pre><code>grep "error" log.txt | head</code></pre>
+<p class="example-desc">Show first 10 lines quietly (no filename header):</p>
+<pre><code>head -q file1.txt file2.txt</code></pre>
+<h2>Flags</h2>
+<li><code>-n, --lines</code> Output first N lines (or -N for all but last N)</li>
+<li><code>-c, --bytes</code> Output first N bytes</li>
+<li><code>-q, --quiet</code> Never print headers with file names</li>
+<li><code>-v, --verbose</code> Always print headers with file names</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error occurred</li>
+<h2>Common Errors</h2>
+<li>"cannot open for reading" - File doesn't exist or no permission</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

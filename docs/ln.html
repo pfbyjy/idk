@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ln - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>ln</h1>
+<p class="summary">Create links between files. Hard links or symbolic (soft) links.</p>
+<p class="see-also">See also: <a href="readlink.html">readlink</a>, <a href="cp.html">cp</a>, <a href="mv.html">mv</a></p>
+<p class="keywords">Keywords: link, symlink, symbolic, hard, alias</p>
+<p class="example-desc">Create a symbolic link (most common):</p>
+<pre><code>ln -s /path/to/target link_name</code></pre>
+<p class="example-desc">Create a hard link:</p>
+<pre><code>ln /path/to/target link_name</code></pre>
+<p class="example-desc">Create symbolic link with relative path:</p>
+<pre><code>ln -sr target link_name</code></pre>
+<p class="example-desc">Create symbolic link, overwriting existing:</p>
+<pre><code>ln -sf /path/to/target link_name</code></pre>
+<p class="example-desc">Create symbolic link to directory:</p>
+<pre><code>ln -s /path/to/directory link_name</code></pre>
+<p class="example-desc">Create multiple links to files in a directory:</p>
+<pre><code>ln -s /path/to/files/* /path/to/links/</code></pre>
+<p class="example-desc">Create hard link (backup without copying):</p>
+<pre><code>ln original.txt backup.txt</code></pre>
+<h2>Flags</h2>
+<li><code>-s, --symbolic</code> Create symbolic link instead of hard link</li>
+<li><code>-f, --force</code> Remove existing destination files</li>
+<li><code>-r, --relative</code> Create relative symbolic links</li>
+<li><code>-v, --verbose</code> Print name of each linked file</li>
+<li><code>-n, --no-dereference</code> Treat link destination as file</li>
+<h2>Hard Links vs Symbolic Links</h2>
+<p>Hard links:</p>
+<p class="example-desc">Point to same inode (same data on disk)</p>
+<p class="example-desc">Can't cross filesystems</p>
+<p class="example-desc">Can't link to directories</p>
+<p class="example-desc">Original can be deleted, link still works</p>
+<p>Symbolic links:</p>
+<p class="example-desc">Point to path (like a shortcut)</p>
+<p class="example-desc">Can cross filesystems</p>
+<p class="example-desc">Can link to directories</p>
+<p class="example-desc">Break if original is deleted/moved</p>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error occurred</li>
+<h2>Common Errors</h2>
+<li>"File exists" - Link already exists (use -f to overwrite)</li>
+<li>"hard link not allowed for directory" - Use -s for directories</li>
+<li>"Invalid cross-device link" - Hard links can't cross filesystems</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

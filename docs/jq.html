@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jq - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>jq</h1>
+<p class="summary">Command-line JSON processor. Essential for API work.</p>
+<p class="see-also">See also: <a href="yq.html">yq</a>, <a href="fx.html">fx</a>, <a href="gron.html">gron</a></p>
+<p class="keywords">Keywords: json, parse, filter, query, transform, api</p>
+<p class="example-desc">Pretty print JSON:</p>
+<pre><code>cat file.json | jq .</code></pre>
+<p class="example-desc">Get a field:</p>
+<pre><code>echo '{"name":"foo"}' | jq '.name'</code></pre>
+<p class="example-desc">Get raw string (no quotes):</p>
+<pre><code>echo '{"name":"foo"}' | jq -r '.name'</code></pre>
+<p class="example-desc">Get array element:</p>
+<pre><code>echo '[1,2,3]' | jq '.[0]'</code></pre>
+<p class="example-desc">Get all array elements:</p>
+<pre><code>echo '[1,2,3]' | jq '.[]'</code></pre>
+<p class="example-desc">Get nested field:</p>
+<pre><code>jq '.data.items[0].name' file.json</code></pre>
+<p class="example-desc">Filter array:</p>
+<pre><code>jq '.[] | select(.active == true)' file.json</code></pre>
+<p class="example-desc">Map over array:</p>
+<pre><code>jq '[.[] | .name]' file.json</code></pre>
+<p class="example-desc">Get multiple fields:</p>
+<pre><code>jq '{name: .name, id: .id}' file.json</code></pre>
+<p class="example-desc">Get array length:</p>
+<pre><code>jq 'length' file.json</code></pre>
+<p class="example-desc">Get keys:</p>
+<pre><code>jq 'keys' file.json</code></pre>
+<p class="example-desc">Compact output (no pretty print):</p>
+<pre><code>jq -c '.' file.json</code></pre>
+<p class="example-desc">Combine files:</p>
+<pre><code>jq -s '.' file1.json file2.json</code></pre>
+<p class="example-desc">Create JSON from arguments:</p>
+<pre><code>jq -n --arg name "foo" '{"name": $name}'</code></pre>
+<p class="example-desc">Filter by field value:</p>
+<pre><code>jq '.[] | select(.type == "error")' file.json</code></pre>
+<p class="example-desc">Sort array:</p>
+<pre><code>jq 'sort_by(.name)' file.json</code></pre>
+<p class="example-desc">Unique values:</p>
+<pre><code>jq 'unique' file.json</code></pre>
+<p class="example-desc">Transform API response:</p>
+<pre><code>curl -s api.example.com | jq '.data[] | {id, name}'</code></pre>
+<h2>Common Patterns</h2>
+<p class="example-desc">`.field`: Get field</p>
+<p class="example-desc">`.[]`: Iterate array</p>
+<p class="example-desc">`.[0]`: First element</p>
+<p class="example-desc">`.field[]`: Iterate nested array</p>
+<p class="example-desc">`select(condition)`: Filter</p>
+<p class="example-desc">`map(expr)`: Transform each element</p>
+<p class="example-desc">`length`: Array/string length</p>
+<p class="example-desc">`keys`: Object keys</p>
+<p class="example-desc">`has("field")`: Check field exists</p>
+<p class="example-desc">`type`: Get value type</p>
+<p class="example-desc">`@base64`: Encode as base64</p>
+<p class="example-desc">`@uri`: URL encode</p>
+<h2>Flags</h2>
+<li><code>-r, --raw-output</code> Output raw strings</li>
+<li><code>-c, --compact-output</code> Compact output</li>
+<li><code>-s, --slurp</code> Read entire input into array</li>
+<li><code>-n, --null-input</code> Don't read input</li>
+<li><code>--arg name value</code> Set variable</li>
+<li><code>-e, --exit-status</code> Set exit code based on output</li>
+<li><code>-S, --sort-keys</code> Sort object keys</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success (with -e: output was not false/null)</li>
+<li><code>1</code> Last output was false or null (with -e)</li>
+<li><code>2</code> Usage error</li>
+<li><code>3</code> Compile error</li>
+<li><code>4</code> Parse error</li>
+<li><code>5</code> Type error</li>
+<h2>Common Errors</h2>
+<li>"Cannot index null" - Field doesn't exist, use `?` operator</li>
+<li>"Cannot iterate over null" - Use `// []` for default empty array</li>
+<li>Quotes in output - Use -r for raw strings</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

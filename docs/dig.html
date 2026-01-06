@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dig - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>dig</h1>
+<p class="summary">DNS lookup utility. Query DNS servers.</p>
+<p class="see-also">See also: <a href="nslookup.html">nslookup</a>, <a href="host.html">host</a>, <a href="whois.html">whois</a></p>
+<p class="keywords">Keywords: dns, lookup, domain, nameserver, query, resolve</p>
+<p class="example-desc">Simple DNS lookup:</p>
+<pre><code>dig example.com</code></pre>
+<p class="example-desc">Get just the IP (short answer):</p>
+<pre><code>dig +short example.com</code></pre>
+<p class="example-desc">Query specific record type:</p>
+<pre><code>dig example.com MX</code></pre>
+<p class="example-desc">Query all record types:</p>
+<pre><code>dig example.com ANY</code></pre>
+<p class="example-desc">Use specific DNS server:</p>
+<pre><code>dig @8.8.8.8 example.com</code></pre>
+<p class="example-desc">Reverse DNS lookup:</p>
+<pre><code>dig -x 8.8.8.8</code></pre>
+<p class="example-desc">Trace DNS resolution path:</p>
+<pre><code>dig +trace example.com</code></pre>
+<p class="example-desc">Query with no extra info:</p>
+<pre><code>dig +noall +answer example.com</code></pre>
+<p class="example-desc">Get TTL values:</p>
+<pre><code>dig +ttlunits example.com</code></pre>
+<p class="example-desc">Query TXT records (SPF, DKIM, etc.):</p>
+<pre><code>dig example.com TXT</code></pre>
+<p class="example-desc">Query nameservers:</p>
+<pre><code>dig example.com NS</code></pre>
+<p class="example-desc">Query SOA record:</p>
+<pre><code>dig example.com SOA</code></pre>
+<p class="example-desc">Check DNSSEC:</p>
+<pre><code>dig +dnssec example.com</code></pre>
+<p class="example-desc">Batch queries from file:</p>
+<pre><code>dig -f domains.txt</code></pre>
+<h2>Common Record Types</h2>
+<p class="example-desc">`A`: IPv4 address</p>
+<p class="example-desc">`AAAA`: IPv6 address</p>
+<p class="example-desc">`MX`: Mail server</p>
+<p class="example-desc">`NS`: Nameserver</p>
+<p class="example-desc">`TXT`: Text (SPF, DKIM, verification)</p>
+<p class="example-desc">`CNAME`: Canonical name (alias)</p>
+<p class="example-desc">`SOA`: Start of authority</p>
+<p class="example-desc">`PTR`: Pointer (reverse DNS)</p>
+<p class="example-desc">`SRV`: Service location</p>
+<h2>Flags</h2>
+<li><code>+short</code> Brief output</li>
+<li><code>+trace</code> Trace delegation path</li>
+<li><code>+noall +answer</code> Only answer section</li>
+<li><code>+ttlunits</code> Show TTL in human units</li>
+<li><code>+dnssec</code> Request DNSSEC records</li>
+<li><code>-x</code> Reverse lookup</li>
+<li><code>-f</code> Read queries from file</li>
+<li><code>@server</code> Use specific DNS server</li>
+<h2>Public DNS Servers</h2>
+<p class="example-desc">`8.8.8.8`: Google</p>
+<p class="example-desc">`1.1.1.1`: Cloudflare</p>
+<p class="example-desc">`9.9.9.9`: Quad9</p>
+<p class="example-desc">`208.67.222.222`: OpenDNS</p>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Usage error</li>
+<li><code>8</code> Couldn't open batch file</li>
+<li><code>9</code> No reply from server</li>
+<li><code>10</code> Internal error</li>
+<h2>Common Errors</h2>
+<li>"connection timed out" - DNS server unreachable</li>
+<li>"NXDOMAIN" - Domain doesn't exist</li>
+<li>"SERVFAIL" - DNS server error</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

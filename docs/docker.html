@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>docker - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>docker</h1>
+<p class="summary">Container platform for building and running applications.</p>
+<p class="see-also">See also: <a href="docker-compose.html">docker-compose</a>, <a href="podman.html">podman</a>, <a href="kubectl.html">kubectl</a></p>
+<p class="keywords">Keywords: container, image, build, run, deploy, virtualization</p>
+<p class="example-desc">Run a container:</p>
+<pre><code>docker run -it ubuntu bash</code></pre>
+<p class="example-desc">Run detached (background):</p>
+<pre><code>docker run -d nginx</code></pre>
+<p class="example-desc">Run with port mapping:</p>
+<pre><code>docker run -p 8080:80 nginx</code></pre>
+<p class="example-desc">Run with volume mount:</p>
+<pre><code>docker run -v /host/path:/container/path image</code></pre>
+<p class="example-desc">Run with environment variable:</p>
+<pre><code>docker run -e MY_VAR=value image</code></pre>
+<p class="example-desc">List running containers:</p>
+<pre><code>docker ps</code></pre>
+<p class="example-desc">List all containers (including stopped):</p>
+<pre><code>docker ps -a</code></pre>
+<p class="example-desc">Stop a container:</p>
+<pre><code>docker stop container_id</code></pre>
+<p class="example-desc">Remove a container:</p>
+<pre><code>docker rm container_id</code></pre>
+<p class="example-desc">List images:</p>
+<pre><code>docker images</code></pre>
+<p class="example-desc">Pull an image:</p>
+<pre><code>docker pull ubuntu:22.04</code></pre>
+<p class="example-desc">Build image from Dockerfile:</p>
+<pre><code>docker build -t myimage:tag .</code></pre>
+<p class="example-desc">View container logs:</p>
+<pre><code>docker logs container_id</code></pre>
+<p class="example-desc">Follow logs:</p>
+<pre><code>docker logs -f container_id</code></pre>
+<p class="example-desc">Execute command in running container:</p>
+<pre><code>docker exec -it container_id bash</code></pre>
+<p class="example-desc">Copy files from container:</p>
+<pre><code>docker cp container_id:/path/file ./local/path</code></pre>
+<p class="example-desc">Remove all stopped containers:</p>
+<pre><code>docker container prune</code></pre>
+<p class="example-desc">Remove unused images:</p>
+<pre><code>docker image prune</code></pre>
+<p class="example-desc">Remove all unused resources:</p>
+<pre><code>docker system prune -a</code></pre>
+<p class="example-desc">Inspect container details:</p>
+<pre><code>docker inspect container_id</code></pre>
+<h2>Flags</h2>
+<li><code>-d, --detach</code> Run in background</li>
+<li><code>-it</code> Interactive with TTY</li>
+<li><code>-p</code> Port mapping host:container</li>
+<li><code>-v</code> Volume mount</li>
+<li><code>-e</code> Environment variable</li>
+<li><code>--name</code> Assign container name</li>
+<li><code>--rm</code> Remove container when it exits</li>
+<li><code>-f</code> Follow logs, or force remove</li>
+<h2>Common Commands</h2>
+<p class="example-desc">`docker run`: Create and start container</p>
+<p class="example-desc">`docker ps`: List containers</p>
+<p class="example-desc">`docker images`: List images</p>
+<p class="example-desc">`docker build`: Build image</p>
+<p class="example-desc">`docker pull`: Download image</p>
+<p class="example-desc">`docker push`: Upload image</p>
+<p class="example-desc">`docker exec`: Run command in container</p>
+<p class="example-desc">`docker logs`: View container logs</p>
+<p class="example-desc">`docker stop/start/restart`: Control containers</p>
+<p class="example-desc">`docker rm/rmi`: Remove containers/images</p>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Generic error</li>
+<li><code>125</code> Docker daemon error</li>
+<li><code>126</code> Command cannot be invoked</li>
+<li><code>127</code> Command not found</li>
+<li><code>137</code> Container killed (OOM or SIGKILL)</li>
+<li><code>143</code> Container terminated (SIGTERM)</li>
+<h2>Common Errors</h2>
+<li>"permission denied" - Add user to docker group or use sudo</li>
+<li>"port is already allocated" - Port in use, choose different</li>
+<li>"no space left on device" - Run docker system prune</li>
+<li>"Cannot connect to Docker daemon" - Start docker service</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

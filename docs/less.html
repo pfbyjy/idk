@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>less - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>less</h1>
+<p class="summary">View file contents with pagination. Better than more.</p>
+<p class="see-also">See also: <a href="more.html">more</a>, <a href="cat.html">cat</a>, <a href="vim.html">vim</a></p>
+<p class="keywords">Keywords: view, read, paginate, scroll, browse, pager</p>
+<p class="example-desc">View a file:</p>
+<pre><code>less file.txt</code></pre>
+<p class="example-desc">View with line numbers:</p>
+<pre><code>less -N file.txt</code></pre>
+<p class="example-desc">View ignoring case in searches:</p>
+<pre><code>less -i file.txt</code></pre>
+<p class="example-desc">View multiple files (use :n and :p to navigate):</p>
+<pre><code>less file1.txt file2.txt</code></pre>
+<p class="example-desc">View output from a command:</p>
+<pre><code>command | less</code></pre>
+<p class="example-desc">Start at a specific line:</p>
+<pre><code>less +100 file.txt</code></pre>
+<p class="example-desc">Start at first match of pattern:</p>
+<pre><code>less +/pattern file.txt</code></pre>
+<p class="example-desc">View with syntax highlighting (if source-highlight installed):</p>
+<pre><code>less -R file.txt</code></pre>
+<h2>Navigation (inside less)</h2>
+<p class="example-desc">`Space` or `f`: Page down</p>
+<p class="example-desc">`b`: Page up</p>
+<p class="example-desc">`g`: Go to beginning</p>
+<p class="example-desc">`G`: Go to end</p>
+<p class="example-desc">`/pattern`: Search forward</p>
+<p class="example-desc">`?pattern`: Search backward</p>
+<p class="example-desc">`n`: Next search match</p>
+<p class="example-desc">`N`: Previous search match</p>
+<p class="example-desc">`q`: Quit</p>
+<p class="example-desc">`h`: Help</p>
+<p class="example-desc">`:n`: Next file</p>
+<p class="example-desc">`:p`: Previous file</p>
+<p class="example-desc">`F`: Follow mode (like tail -f)</p>
+<h2>Flags</h2>
+<li><code>-N, --LINE-NUMBERS</code> Show line numbers</li>
+<li><code>-i, --ignore-case</code> Case-insensitive search</li>
+<li><code>-S, --chop-long-lines</code> Don't wrap long lines</li>
+<li><code>-R, --RAW-CONTROL-CHARS</code> Show ANSI colors</li>
+<li><code>-F, --quit-if-one-screen</code> Exit if content fits one screen</li>
+<li><code>-X, --no-init</code> Don't clear screen on exit</li>
+<li><code>+cmd</code> Run command on startup</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<h2>Common Errors</h2>
+<li>"file is a directory" - Use ls instead</li>
+<li>Search not finding - Check case, use -i for case-insensitive</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

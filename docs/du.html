@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>du - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>du</h1>
+<p class="summary">Estimate file and directory space usage.</p>
+<p class="see-also">See also: <a href="df.html">df</a>, <a href="ncdu.html">ncdu</a>, <a href="ls.html">ls</a> -<a href="l.html">l</a></p>
+<p class="keywords">Keywords: disk, usage, size, directory, space, storage</p>
+<p class="example-desc">Show size of a directory:</p>
+<pre><code>du -sh directory/</code></pre>
+<p class="example-desc">Show size of current directory:</p>
+<pre><code>du -sh .</code></pre>
+<p class="example-desc">Show size of all subdirectories:</p>
+<pre><code>du -h --max-depth=1</code></pre>
+<p class="example-desc">Show size of each item in directory:</p>
+<pre><code>du -sh *</code></pre>
+<p class="example-desc">Show and sort by size:</p>
+<pre><code>du -sh * | sort -h</code></pre>
+<p class="example-desc">Find largest directories:</p>
+<pre><code>du -h --max-depth=1 | sort -hr | head -10</code></pre>
+<p class="example-desc">Show apparent size (not disk usage):</p>
+<pre><code>du -sh --apparent-size directory/</code></pre>
+<p class="example-desc">Exclude certain patterns:</p>
+<pre><code>du -sh --exclude='*.log' directory/</code></pre>
+<p class="example-desc">Show total only:</p>
+<pre><code>du -s directory/</code></pre>
+<p class="example-desc">Follow symbolic links:</p>
+<pre><code>du -shL directory/</code></pre>
+<p class="example-desc">Show size in specific units:</p>
+<pre><code>du -sk directory/</code></pre>
+<p class="example-desc">Find large files:</p>
+<pre><code>du -ah . | sort -hr | head -20</code></pre>
+<h2>Flags</h2>
+<li><code>-h, --human-readable</code> Human-readable sizes</li>
+<li><code>-s, --summarize</code> Display only total for each argument</li>
+<li><code>-c, --total</code> Produce a grand total</li>
+<li><code>-a, --all</code> Show all files, not just directories</li>
+<li><code>-d, --max-depth</code> Max directory depth to show</li>
+<li><code>--exclude</code> Skip files matching pattern</li>
+<li><code>-L, --dereference</code> Follow symbolic links</li>
+<li><code>--apparent-size</code> Print apparent sizes, not disk usage</li>
+<li><code>-k</code> Show in kilobytes</li>
+<li><code>-m</code> Show in megabytes</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<h2>Common Errors</h2>
+<li>"Permission denied" - Need read access to directories</li>
+<li>Slow on large directories - Use ncdu for interactive exploration</li>
+<li>Size differs from ls - du shows disk blocks, ls shows file size</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>

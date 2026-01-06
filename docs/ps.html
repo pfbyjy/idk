@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ps - idk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="index.html" class="back-link">&larr; All commands</a>
+            <span class="brand">idk</span>
+        </nav>
+
+        <main class="page-content">
+            <h1>ps</h1>
+<p class="summary">Report process status. Show running processes.</p>
+<p class="see-also">See also: <a href="top.html">top</a>, <a href="htop.html">htop</a>, <a href="pgrep.html">pgrep</a>, <a href="kill.html">kill</a></p>
+<p class="keywords">Keywords: process, running, list, pid, status, memory, cpu</p>
+<p class="example-desc">Show processes for current user:</p>
+<pre><code>ps</code></pre>
+<p class="example-desc">Show all processes (full format):</p>
+<pre><code>ps aux</code></pre>
+<p class="example-desc">Show all processes (standard format):</p>
+<pre><code>ps -ef</code></pre>
+<p class="example-desc">Show process tree:</p>
+<pre><code>ps auxf</code></pre>
+<p class="example-desc">Show specific process by PID:</p>
+<pre><code>ps -p 1234</code></pre>
+<p class="example-desc">Show processes by name:</p>
+<pre><code>ps aux | grep nginx</code></pre>
+<p class="example-desc">Show processes for a user:</p>
+<pre><code>ps -u username</code></pre>
+<p class="example-desc">Show processes with custom columns:</p>
+<pre><code>ps -eo pid,ppid,cmd,%mem,%cpu</code></pre>
+<p class="example-desc">Show top memory consuming processes:</p>
+<pre><code>ps aux --sort=-%mem | head</code></pre>
+<p class="example-desc">Show top CPU consuming processes:</p>
+<pre><code>ps aux --sort=-%cpu | head</code></pre>
+<p class="example-desc">Show process tree for specific process:</p>
+<pre><code>ps -ef --forest | grep -A5 nginx</code></pre>
+<p class="example-desc">Show threads:</p>
+<pre><code>ps -eLf</code></pre>
+<p class="example-desc">Show only process IDs:</p>
+<pre><code>ps -eo pid</code></pre>
+<h2>Common Column Meanings</h2>
+<p class="example-desc">`PID`: Process ID</p>
+<p class="example-desc">`PPID`: Parent process ID</p>
+<p class="example-desc">`USER`: Owner of process</p>
+<p class="example-desc">`%CPU`: CPU usage percentage</p>
+<p class="example-desc">`%MEM`: Memory usage percentage</p>
+<p class="example-desc">`VSZ`: Virtual memory size (KB)</p>
+<p class="example-desc">`RSS`: Resident set size (physical memory KB)</p>
+<p class="example-desc">`TTY`: Controlling terminal</p>
+<p class="example-desc">`STAT`: Process state (R=running, S=sleeping, Z=zombie)</p>
+<p class="example-desc">`START`: Start time</p>
+<p class="example-desc">`TIME`: CPU time used</p>
+<p class="example-desc">`COMMAND`: Command line</p>
+<h2>Flags</h2>
+<li><code>a</code> Show processes for all users</li>
+<li><code>u</code> Display user-oriented format</li>
+<li><code>x</code> Show processes without controlling terminal</li>
+<li><code>-e</code> Select all processes</li>
+<li><code>-f</code> Full format listing</li>
+<li><code>-p</code> Select by PID</li>
+<li><code>-u</code> Select by user</li>
+<li><code>-o</code> Custom output format</li>
+<li><code>--sort</code> Sort by column</li>
+<h2>Exit Codes</h2>
+<li><code>0</code> Success</li>
+<li><code>1</code> Error</li>
+<h2>Common Errors</h2>
+<li>"process not found" - Process may have ended</li>
+<li>Too many processes - Use grep or --sort to filter</li>
+        </main>
+
+        <footer>
+            <p>
+                <a href="https://github.com/anthropics/idk">GitHub</a> ·
+                Install: <code>cargo install idk</code>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
